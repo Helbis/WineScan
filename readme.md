@@ -31,7 +31,7 @@ NodeJS
 
 
   #### UI
-  + [ ] Allow user to see the wines
+  + [ ] Allow user to see the wines ◀️ 🔧
     + [ ] Cards view with scroll on multiple data from database
   + [ ] Allow user to manually add or remove any amount of wine bottles at once
 
@@ -44,4 +44,4 @@ NodeJS
 
 
   #### Design
-  + [ ] Create **SVG** logo ◀️ 🔧
+  + [x] Create **SVG** logo
