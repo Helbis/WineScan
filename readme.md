@@ -44,4 +44,4 @@ NodeJS
 
 
   #### Design
-  + [x] Create **SVG** logo
+  + [x] Create **SVG** logos
