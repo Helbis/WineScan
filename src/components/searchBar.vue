@@ -1,11 +1,6 @@
-<!-- NOTE:
-1. Think about retracting search bar to the favicon.
-2. Think about filtering options
- -->
-
 <template>
-    <div class="searchBar">
-
+    <div id="searchBar">
+        <input type="text" placeholder="Search..">
     </div>
 </template>
 

@@ -2,8 +2,7 @@
     <div class="collectionsView">
         <searchBar></searchBar>
 
-        <!-- There will be many cards, make a list!!! -->
-        <card></card>
+        <card v-for="n in 10"></card>
     </div>
 </template>
 

@@ -2,10 +2,17 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    background: darkorchid;
-    border: 4px dashed hotpink;
+    background: cornsilk;
+
+    margin-bottom: 1rem;
+}
+.card:hover{ /* TODO: Don't have it in mobile version, less animations */
+    border: 1px solid dodgerblue;
+    box-shadow: 0.2rem 0.2rem dimgrey;
 }
 
+
+/* Left part of the card */
 .left_of_card{
     width: 100px;
     height: 100px;
@@ -16,6 +23,8 @@
     grid-column: 1 / 2;
 }
 
+
+/* Middle part of the card */
 .middle_of_card{
     display: flex;
     flex-direction: column;
@@ -35,11 +44,13 @@
     margin: auto;
     padding: 0;
 }
-.middle_of_card > .wine_year{
+.middle_of_card > .wine_style{
     margin: auto;
     padding: 0;
 }
 
+
+/* Right part of the card */
 .right_of_card{
     display: flex;
     flex-direction: column;
@@ -52,9 +63,17 @@
 .right_of_card > button{
     margin-top: 0.5rem;
     margin-left: auto;
+    margin-right: 0.5rem;
     padding: 0;
+
+    color: black;
 }
 .right_of_card > .num_of_bottles{
     margin-top: auto;
+    margin-left: auto;
+    margin-right: 2rem;
+
     padding: 0;
+
+    /* max-width: 4ch; */
 }

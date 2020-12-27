@@ -1,18 +1,22 @@
 <template>
-<div class="card">
-    <img class="left_of_card" src="./../../photos/blanc_big_474x774.jpg" alt="wine">
+    <div class="card">
+        <img
+            class="left_of_card"
+            src="./../../photos/blanc_big_474x774.jpg"
+            alt="wine"
+            loading="lazy">
 
-    <div class="middle_of_card">
-        <p class="wine_name">name</p>
-        <p class="wine_year">year</p>
-        <p class="wine_style">style</p>
-    </div>
+        <div class="middle_of_card">
+            <p class="wine_name">name</p>
+            <p class="wine_year">year</p>
+            <p class="wine_style">style</p>
+        </div>
 
-    <div class="right_of_card">
-        <button type="button" name="button">Hello</button>
-        <p class="num_of_bottles">num_of_bottles</p>
+        <div class="right_of_card">
+            <button type="button" name="detailed_view">🔽</button>
+            <p class="num_of_bottles">842</p>
+        </div>
     </div>
-</div>
 </template>
 
 <script>
