@@ -1,20 +1,31 @@
 .card{
     flex-basis: 300px;
-    flex-grow: 0.5;
+    flex-grow: 0.2;
     flex-shrink: 1;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+
+    display: flex;
+    flex-direction: row;
+    /* grid-template-columns: repeat(3, 1fr); */
 
     background: cornsilk;
 
-    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-bottom: 1rem; */
+
+    /* max-height: 150px; */
 }
-.card:active,
-.card:hover{ /* TODO: Don't have it in mobile version, less animations */
+/*.card:active,
+.card:hover{
+    /* TODO: Don't have it in mobile version, less animations */
+/*
     border: 1px solid dodgerblue;
     box-shadow: 0.2rem 0.2rem dimgrey;
-}
+}*/
 
 
 /* Left part of the card */
@@ -25,7 +36,9 @@
     margin: 1rem;
     padding: 0;
 
-    grid-column: 1 / 2;
+    display: flex;
+    align-self: center;
+    /* grid-column: 1 / 2; */
 }
 
 
@@ -41,7 +54,7 @@
 
     text-align: left;
 }
-.middle_of_card > .wine_name{
+/* .middle_of_card > .wine_name{
     margin: auto;
     padding: 0;
 }
@@ -52,7 +65,7 @@
 .middle_of_card > .wine_style{
     margin: auto;
     padding: 0;
-}
+} */
 
 
 /* Right part of the card */
@@ -61,24 +74,25 @@
     flex-direction: column;
 
     align-items: center;
+    justify-content: space-between;
 
     margin: 0;
-    padding: 0;
+    padding: 0.5rem;
 }
 .right_of_card > button{
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem;
     margin-left: auto;
     margin-right: 0.5rem;
     padding: 0;
 
-    color: black;
+    color: black; */
 }
 .right_of_card > .num_of_bottles{
-    margin-top: auto;
+    /* margin-top: auto;
     margin-left: auto;
     margin-right: 2rem;
 
-    padding: 0;
+    padding: 0; */
 
     /* max-width: 4ch; */
 }
