@@ -11,12 +11,14 @@
 <script>
 import searchBar from './searchBar.vue'
 import card from './card.vue'
+import upButton from './upButton.vue'
 
 export default {
     name: 'collectionsView',
     components:{
         searchBar,
-        card
+        card,
+        upButton
     }
 }
 </script>
