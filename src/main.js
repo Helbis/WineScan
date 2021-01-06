@@ -4,15 +4,13 @@ import App from './App.vue'
 
 
 let prevScrollpos = window.pageYOffset;
+const searchBar = document.getElementById("searchBar");
 window.onscroll = () => {
 	let currentScrollPos = window.pageYOffset;
   	if (prevScrollpos > currentScrollPos) {
-    	document.getElementById("searchBar").style.top = "0";
-        // console.log("Show");
-
+    	searchBar.style.top = "0";
   	} else {
-    	document.getElementById("searchBar").style.top = "-100px";
-        // console.log("Hide");
+    	searchBar.style.top = "-100px";
   	}
 prevScrollpos = currentScrollPos;
 }
