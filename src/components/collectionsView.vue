@@ -2,7 +2,7 @@
     <div class="collectionsView">
         <searchBar></searchBar>
 
-        <card v-for="n in 40"></card>
+        <card v-for="n in 30"></card>
 
         <upButton></upButton>
     </div>

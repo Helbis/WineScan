@@ -1,6 +1,6 @@
 <template>
     <div class="upButton">
-        <button type="button" name="button">🆙</button>
+        <button class="upButton" type="button" name="button">^</button>
     </div>
 </template>
 
