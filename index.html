@@ -9,7 +9,7 @@
 
         <!-- FAVICON -->
         <!-- TODO: Make svg favicons work -->
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="./src/assets/icon.svg" />
 
         <!-- CSS -->
         <!-- TODO: Make division for different sizes of the screen -->
@@ -21,16 +21,16 @@
 
         <!-- NOTE: Here goes big screen CSS -->
 
-
         <!-- TODO: Test non Vite support of VUE.JS (via CDN) -->
         <script src="https://unpkg.com/vue@next"></script>
 
         <!-- TODO: Remember to preset font sizes and faces -->
 
+        <!-- OTHER STUFF -->
+        <base href=".">
     </head>
     <body>
-        <div id="app"></div>
-        <script defer type="module" src="./src/main.js"></script>
-
+        <div id="app">{{ product }}</div>
+        <script defer type="module" src="./main.js"></script>
     </body>
 </html>

@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import collectionsView from './components/collectionsView.vue'
-
+import collectionsView from './components/collectionsView.vue';
+console.log("App.vue");
 export default {
     name: 'App',
     components: {
