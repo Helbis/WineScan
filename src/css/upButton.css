@@ -1,28 +1,30 @@
-/* .upButton{ */
-    /* position: sticky; */
+#upButton{
+    position: sticky;
 
     /* POSITION */
-    /* bottom: 0.5rem; */
-    /* right: 0; */
-    /* left: auto; */
+    bottom: 0.5rem;
+    right: 0;
+    left: auto;
 
     /* SIZE */
-    /* width: 5rem; /* BUG: For some reason is 53px */ */
-    /* height: 5rem; */
+    width: 5rem; /* BUG: For some reason is 53px */
+    height: 5rem;
 
     /* ROUNDING CORNERS */
-    /* border-radius: 50%; */
-    /* border: none; */
+    border-radius: 50%;
+    border: none;
 
-    /* background: indianred; */
+    background: indianred;
 
-    /* font-size: 3rem; */
+    font-size: 3rem;
 
-    /* padding: 0; */
-    /* margin: 0; */
-/* } */
+    padding: 0;
+    margin: 0;
 
-#upButton{
+    z-index: 100;
+}
+
+/* #upButton{
     display: none;
     position: fixed;
     bottom: 20px;
@@ -36,7 +38,7 @@
     cursor: pointer;
     padding: 15px;
     border-radius: 4px;
-}
+} */
 
 #upButton:active,
 #upButton:hover{

@@ -12,7 +12,8 @@
 import searchBar from './searchBar.vue';
 import card from './card.vue';
 import upButton from './upButton.vue';
-console.log("collectionsView.vue");
+
+
 export default {
     name: 'collectionsView',
     components:{
