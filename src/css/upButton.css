@@ -7,7 +7,7 @@
     left: auto;
 
     /* SIZE */
-    width: 5rem; /* BUG: For some reason is 53px */
+    width: 5rem; /* BUG: For some reason the limit is 53px */
     height: 5rem;
 
     /* ROUNDING CORNERS */

@@ -13,7 +13,7 @@
         </div>
 
         <div class="right_of_card">
-            <button type="button" name="detailed_view">🔽</button>
+            <button type="button" name="detailed_view">More</button>
             <p class="num_of_bottles">842</p>
         </div>
     </div>

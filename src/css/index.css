@@ -1,13 +1,11 @@
 body{
-    background: red;
+    background: lightcoral;
 
     margin: 0;
     padding: 0;
 }
 
 #app {
-    background: orange;
-
     text-align: center;
 
     margin: 0;

@@ -14,10 +14,10 @@ window.onscroll = () => {
 
 	// UpButton
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		console.log("block");
+		// console.log("block");
 		document.getElementById("upButton").style.display = "block";
 	} else {
-		console.log("None");
+		// console.log("None");
 		document.getElementById("upButton").style.display = "none";
 	}
 }
