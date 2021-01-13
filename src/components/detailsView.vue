@@ -12,24 +12,77 @@
                 <p class="wine_year">year</p>
                 <p class="wine_style">style</p>
             </div>
+
+            <div class="creationDate">
+
+            </div>
+
+            <button
+                type="button"
+                name="button"
+                class="details-exit">
+                    &times;
+            </button>
         </div>
 
         <div class="details-main">
             <div class="description">
-                Description
+                <p class="sectionTitle">
+                    Description
+                </p>
+
+                <button
+                    type="button"
+                    name="button"
+                    class="foldingBtn"
+                    @click="changeFoldStateDescripton">{{ stateDesc_text }}</button>
             </div>
+            <hr>
 
             <div class="invoices">
-                Invoices
-            </div>
+                <p class="sectionTitle">
+                    Invoices
+                </p>
 
-            <p class="num_of_bottles">842</p>
+                <button
+                    type="button"
+                    name="button"
+                    class="foldingBtn"
+                    @click="changeFoldStateInvoices">{{ stateInv_text }}</button>
+            </div>
+            <hr>
+
+            <p class="num_of_bottles">Bottles : 842</p>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'detailsView'
+    name: 'detailsView',
+    data(){
+        return {
+            stateDesc_text: 'un fold',
+            stateInv_text: 'un fold'
+        }
+    },
+
+    methods: {
+        // NOTE: Not a clean solution but works for now
+        changeFoldStateDescripton(){
+            if (this.stateDesc_text === 'un fold') {
+                this.stateDesc_text = 'fold';
+            } else if (this.stateDesc_text === 'fold') {
+                this.stateDesc_text = 'un fold';
+            }
+        },
+        changeFoldStateInvoices(){
+            if (this.stateInv_text === 'un fold') {
+                this.stateInv_text = 'fold';
+            } else if (this.stateInv_text === 'fold') {
+                this.stateInv_text = 'un fold';
+            }
+        }
+    }
 }
 </script>

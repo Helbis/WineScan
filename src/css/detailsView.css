@@ -18,19 +18,76 @@
     height: 50%;
 }
 
+/* top / header part of the view */
 .details-top{
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
     align-items: flex-start;
 
-    /* max-height: 20%; */
-
     /* FONT */
     font-size: 1rem;
-}
 
+    border: blue solid 1px;
+}
 .details-top > img{
     width: 150px;
     height: 150px;
+}
+
+.details-exit{
+    background: none;
+    border: none;
+    font-size: 2rem;
+
+    color: black;
+}
+.details-exit:hover,
+.details-exit:active{
+    /* outline: green solid 10px; */
+
+    color: red;
+}
+
+/* Main part of the view */
+.details-main{
+    display: flex;
+    flex-direction: column;
+}
+
+.details-main > hr{
+    width: 90%;
+    color: darkslategrey;
+}
+
+.details-main > .description, .invoices{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    padding: 1rem;
+    margin: 0;
+}
+
+p.sectionTitle{
+    margin: 0;
+    padding: 0;
+}
+
+button.foldingBtn{
+    background: dodgerblue;
+    color: black;
+
+    border-radius: 5px;
+    border-style: none;
+
+    /* Center vertically */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+button.foldingBtn:active,
+button.foldingBtn:hover{
+    background: deepskyblue;
 }
