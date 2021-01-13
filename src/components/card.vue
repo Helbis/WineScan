@@ -13,7 +13,12 @@
         </div>
 
         <div class="right_of_card">
-            <button type="button" name="detailed_view">More</button>
+            <button
+                type="button"
+                name="detailed_view"
+                @click="activateDetails">
+                    More
+            </button>
             <p class="num_of_bottles">842</p>
         </div>
     </div>
@@ -21,6 +26,17 @@
 
 <script>
 export default {
-    name: 'card'
+    name: 'card',
+
+    methods:{
+        activateDetails(){
+            const activeElems = document.querySelectorAll('.detailsView.inactive');
+            activeElems.forEach(elm => {
+                if (elm == null) { return; }
+                elm.classList.remove('inactive');
+                elm.classList.add('active');
+            });
+        }
+    }
 }
 </script>

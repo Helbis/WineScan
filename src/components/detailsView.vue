@@ -1,7 +1,6 @@
 <template>
-    <!-- NOTE: probably a good idea would be to change that from divs to article and sections -->
-    <div class="detailsView">
-        <div class="details-top">
+    <article class="detailsView inactive">
+        <header class="details-top">
             <img
                 class="left_of_card"
                 src="./../../photos/blanc_big_474x774.jpg"
@@ -25,11 +24,11 @@
                 class="details-exit">
                     &times;
             </button>
-        </div>
+        </header>
         <hr class="afterTop">
 
-        <div class="details-main">
-            <div class="description">
+        <main class="details-main">
+            <section class="description">
                 <p class="sectionTitle">
                     Description
                 </p>
@@ -38,11 +37,12 @@
                     type="button"
                     name="button"
                     class="foldingBtn"
-                    @click="changeFoldStateDescripton">{{ stateDesc_text }}</button>
-            </div>
+                    @click="changeFoldStateDescripton">{{ stateDesc_text }}
+                </button>
+            </section>
             <hr>
 
-            <div class="invoices">
+            <section class="invoices">
                 <p class="sectionTitle">
                     Invoices
                 </p>
@@ -51,13 +51,16 @@
                     type="button"
                     name="button"
                     class="foldingBtn"
-                    @click="changeFoldStateInvoices">{{ stateInv_text }}</button>
-            </div>
+                    @click="changeFoldStateInvoices">{{ stateInv_text }}
+                </button>
+            </section>
             <hr>
+        </main>
 
+        <footer>
             <p class="num_of_bottles">Bottles : 842</p>
-        </div>
-    </div>
+        </footer>
+    </article>
 </template>
 
 <script>
@@ -89,7 +92,12 @@ export default {
         },
 
         closeDetails(){
-            alert("Closing");
+            const activeElems = document.querySelectorAll('.detailsView.active');
+            activeElems.forEach(elm => {
+                if (elm == null) { return; }
+                elm.classList.remove('active');
+                elm.classList.add('inactive');
+            });
         }
     }
 }
