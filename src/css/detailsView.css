@@ -11,11 +11,9 @@
     background: aqua;
     font-size: 2rem;
 
-    outline: darkgreen solid 10px;
-
-
-    width: 50%;
-    height: 50%;
+    min-width: 50%;
+    max-width: 80%;
+    min-height: 50%;
 }
 
 /* top / header part of the view */
@@ -24,15 +22,21 @@
     flex-direction: row;
     /* justify-content: center; */
     align-items: flex-start;
+    justify-content: space-between;
 
     /* FONT */
     font-size: 1rem;
 
-    border: blue solid 1px;
+    /* border: blue solid 1px; */
 }
 .details-top > img{
     width: 150px;
     height: 150px;
+}
+
+.basicInfo{
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .details-exit{
@@ -41,12 +45,18 @@
     font-size: 2rem;
 
     color: black;
+
+    margin-top: 0;
 }
 .details-exit:hover,
 .details-exit:active{
-    /* outline: green solid 10px; */
 
     color: red;
+}
+
+hr.afterTop{
+    width: 80%;
+    color: lightgrey;
 }
 
 /* Main part of the view */
@@ -86,6 +96,9 @@ button.foldingBtn{
     /* Center vertically */
     margin-top: auto;
     margin-bottom: auto;
+
+    width: 9ch;
+    height: 4ch;
 }
 button.foldingBtn:active,
 button.foldingBtn:hover{

@@ -1,4 +1,5 @@
 <template>
+    <!-- NOTE: probably a good idea would be to change that from divs to article and sections -->
     <div class="detailsView">
         <div class="details-top">
             <img
@@ -7,23 +8,25 @@
                 alt="wine"
                 loading="lazy">
 
-            <div class="middle_of_card">
+            <div class="middle_of_card basicInfo">
                 <p class="wine_name">name</p>
                 <p class="wine_year">year</p>
                 <p class="wine_style">style</p>
             </div>
 
             <div class="creationDate">
-
+                <p>Created on <br> {{ creationDate }}</p>
             </div>
 
             <button
                 type="button"
-                name="button"
+                name="exit"
+                @click="closeDetails"
                 class="details-exit">
                     &times;
             </button>
         </div>
+        <hr class="afterTop">
 
         <div class="details-main">
             <div class="description">
@@ -62,26 +65,31 @@ export default {
     name: 'detailsView',
     data(){
         return {
-            stateDesc_text: 'un fold',
-            stateInv_text: 'un fold'
+            stateDesc_text: 'unfold',
+            stateInv_text: 'unfold',
+            creationDate: 'dd-mm-yy'
         }
     },
 
     methods: {
         // NOTE: Not a clean solution but works for now
         changeFoldStateDescripton(){
-            if (this.stateDesc_text === 'un fold') {
+            if (this.stateDesc_text === 'unfold') {
                 this.stateDesc_text = 'fold';
             } else if (this.stateDesc_text === 'fold') {
-                this.stateDesc_text = 'un fold';
+                this.stateDesc_text = 'unfold';
             }
         },
         changeFoldStateInvoices(){
-            if (this.stateInv_text === 'un fold') {
+            if (this.stateInv_text === 'unfold') {
                 this.stateInv_text = 'fold';
             } else if (this.stateInv_text === 'fold') {
-                this.stateInv_text = 'un fold';
+                this.stateInv_text = 'unfold';
             }
+        },
+
+        closeDetails(){
+            alert("Closing");
         }
     }
 }
