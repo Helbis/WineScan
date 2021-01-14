@@ -1,3 +1,6 @@
+import './collectionsView.js';
+import './detailsView.js';
+
 app.component('App', {
     name: 'App',
     components: {
@@ -5,11 +8,12 @@ app.component('App', {
         detailsView
     },
 
-    template:`
-        /*html*/
+    template:
+    /*html*/
+    `
         <div>
             <collectionsView></collectionsView>
             <detailsView></detailsView>
         </div>
-        `
+    `
 });

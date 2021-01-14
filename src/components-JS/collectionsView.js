@@ -1,3 +1,7 @@
+import './upButton.js';
+import './card.js';
+import './searchBar.js';
+
 app.component('collectionsView', {
     name: 'collectionsView',
     components:{
