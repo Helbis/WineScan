@@ -99,6 +99,9 @@ button.foldingBtn{
     background: dodgerblue;
     color: black;
 
+    /* font-size: 1.5rem; */
+    font-weight: bold;
+
     border-radius: 5px;
     border-style: none;
 

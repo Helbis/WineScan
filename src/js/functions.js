@@ -23,20 +23,18 @@ function closeDetails() {
     });
 }
 
-// NOTE: Not a clean solution but works for now
-function changeFoldStateDescripton() {
-    if (this.stateDesc_text === 'unfold') {
-        this.stateDesc_text = 'fold';
-    } else if (this.stateDesc_text === 'fold') {
-        this.stateDesc_text = 'unfold';
-    }
-}
+// Website for symbols
+// https://www.htmlsymbols.xyz/search?q=dot
+function changeFoldState(id) {
+    const upArrow = "\uD83E\uDC81";
+    const downArrow = "\uD83E\uDC83";
 
-function changeFoldStateInvoices() {
-    if (this.stateInv_text === 'unfold') {
-        this.stateInv_text = 'fold';
-    } else if (this.stateInv_text === 'fold') {
-        this.stateInv_text = 'unfold';
+    const elm = document.getElementById(id);
+
+    if (elm.innerText == upArrow) {
+        elm.innerText = downArrow;
+    } else if (elm.innerText == downArrow) {
+        elm.innerText = upArrow;
     }
 }
 
@@ -58,10 +56,8 @@ window.onscroll = () => {
 
     // UpButton
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        // console.log("block");
         document.getElementById("upButton").style.display = "block";
     } else {
-        // console.log("None");
         document.getElementById("upButton").style.display = "none";
     }
 }
