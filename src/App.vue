@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <collectionsView/>
     <detailsView/>
 </template>
@@ -14,7 +14,7 @@ export default {
         detailsView
     }
 }
-</script>
+</script> -->
 
 <!--<script>
 /*

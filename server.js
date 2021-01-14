@@ -3,7 +3,7 @@ const server = express();
 const port = 3000;
 
 
-// server.use(express.static('.'));
+server.use(express.static('.'));
 // server.use(express.static('./src/components'));
 
 

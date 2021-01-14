@@ -1,6 +1,13 @@
 // import { createApp } from 'vue';
-const Vue = require('vue');
-import App from './App.vue';
+// const Vue = require('vue');
+// import App from './App.vue';
+
+import './components-JS/upButton.js';
+import './components-JS/card.js';
+import './components-JS/collectionsView.js';
+import './components-JS/detailsView.js';
+import './components-JS/searchBar.js';
+import './components-JS/App.js';
 
 
 let prevScrollpos = window.pageYOffset;
