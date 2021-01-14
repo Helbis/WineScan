@@ -1,4 +1,5 @@
-import { createApp } from 'vue';
+// import { createApp } from 'vue';
+const Vue = require('vue');
 import App from './App.vue';
 
 
@@ -23,7 +24,7 @@ window.onscroll = () => {
 }
 
 
-const app = createApp(App);
+const app = Vue.createApp(App);
 
 // const app = Vue.createApp({
 // 	data(){
