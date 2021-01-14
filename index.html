@@ -20,10 +20,8 @@
         <link rel="stylesheet" href="./src/css/detailsView.css">
         <link rel="stylesheet" href="./src/css/upButton.css">
 
-        <!-- NOTE: Here goes big screen CSS -->
-
-        <!-- TODO: Test non Vite support of VUE.JS (via CDN) -->
-        <!-- <script src="https://unpkg.com/vue@next"></script> -->
+        <!-- JavaScript -->
+        <script src="./src/js/functions.js" charset="utf-8"></script>
 
         <!-- TODO: Remember to preset font sizes and faces -->
 
@@ -31,7 +29,104 @@
         <base href=".">
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <div class="collectionsView">
+                <input id="searchBar" type="text" placeholder="Search...">
+
+                <div class="card">
+                    <img
+                        class="left_of_card"
+                        src="./../../photos/blanc_big_474x774.jpg"
+                        alt="wine"
+                        loading="lazy">
+
+                    <div class="middle_of_card">
+                        <p class="wine_name">name</p>
+                        <p class="wine_year">year</p>
+                        <p class="wine_style">style</p>
+                    </div>
+
+                    <div class="right_of_card">
+                        <button
+                            type="button"
+                            name="detailed_view"
+                            @click="activateDetails">
+                                More
+                        </button>
+                        <p class="num_of_bottles">842</p>
+                    </div>
+                </div>
+
+                <button id="upButton"
+                    type="button"
+                    name="upButton"
+                    onclick="scrollUp"
+                    >^</button>
+            </div>
+
+            <article class="detailsView inactive">
+                <header class="details-top">
+                    <img
+                        class="left_of_card"
+                        src="./../../photos/blanc_big_474x774.jpg"
+                        alt="wine"
+                        loading="lazy">
+
+                    <div class="middle_of_card basicInfo">
+                        <p class="wine_name">name</p>
+                        <p class="wine_year">year</p>
+                        <p class="wine_style">style</p>
+                    </div>
+
+                    <div class="creationDate">
+                        <p>Created on <br> {{ creationDate }}</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        name="exit"
+                        @click="closeDetails"
+                        class="details-exit">
+                            &times;
+                    </button>
+                </header>
+                <hr class="afterTop">
+
+                <main class="details-main">
+                    <section class="description">
+                        <p class="sectionTitle">
+                            Description
+                        </p>
+
+                        <button
+                            type="button"
+                            name="button"
+                            class="foldingBtn"
+                            @click="changeFoldStateDescripton">{{ stateDesc_text }}
+                        </button>
+                    </section>
+                    <hr>
+
+                    <section class="invoices">
+                        <p class="sectionTitle">
+                            Invoices
+                        </p>
+
+                        <button
+                            type="button"
+                            name="button"
+                            class="foldingBtn"
+                            @click="changeFoldStateInvoices">{{ stateInv_text }}
+                        </button>
+                    </section>
+                    <hr>
+                </main>
+
+                <footer>
+                    <p class="num_of_bottles">Bottles : 842</p>
+                </footer>
+            </article>
+        </div>
         <script defer type="module" src="./main.js"></script>
     </body>
 </html>
