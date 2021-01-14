@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'martel_sanslight';
+    src: url('martelsans-light-webfont.eot');
+    src: url('martelsans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('martelsans-light-webfont.woff2') format('woff2'),
+         url('martelsans-light-webfont.woff') format('woff'),
+         url('martelsans-light-webfont.ttf') format('truetype'),
+         url('martelsans-light-webfont.svg#martel_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
