@@ -35,384 +35,56 @@
             <div class="collectionsView">
                 <input id="searchBar" type="text" placeholder="Search...">
 
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
+                <template id="temp_card">
+                    <div class="card">
+                        <img class="left_of_card"
+                            src="./public/photos/blanc_big_474x774.jpg"
+                            alt="wine"
+                            loading="lazy">
 
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
+                        <div class="middle_of_card">
+                            <p class="wine_name">name</p>
+                            <p class="wine_year">year</p>
+                            <p class="wine_style">style</p>
+                        </div>
 
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
+                        <div class="right_of_card">
+                            <button
+                                type="button"
+                                name="detailed_view"
+                                onclick="activateDetails()">
+                                    More
+                            </button>
+                            <p class="num_of_bottles">842</p>
+                        </div>
                     </div>
+                </template>
+
+                <div id="here">
+
                 </div>
 
-                <!-- dodatkowe karty do testu -->
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
+                <script type="text/javascript">
+                // Make multiple cards
+                // IIFE
+                (function() {
+                    'use strict';
 
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
+                    const temp_card = document.getElementById("temp_card");
+                    const card = temp_card.content;
+                    const first = card.firstElementChild;
+                    const here = document.getElementById("here");
 
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
+                    console.log(temp_card);
+                    console.log(card);
+                    console.log(first);
+                    console.log(here);
 
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="left_of_card"
-                        src="./public/photos/blanc_big_474x774.jpg"
-                        alt="wine"
-                        loading="lazy">
-
-                    <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
-                    </div>
-
-                    <div class="right_of_card">
-                        <button
-                            type="button"
-                            name="detailed_view"
-                            onclick="activateDetails()">
-                                More
-                        </button>
-                        <p class="num_of_bottles">842</p>
-                    </div>
-                </div>
-
-                <!-- koniec dodatkowych kart -->
+                    for (let i = 0; i < 10; i++) {
+                        here.appendChild(first.cloneNode(true));
+                    }
+                }());
+                </script>
 
                 <button id="upButton"
                     type="button"
