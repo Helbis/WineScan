@@ -1,20 +1,19 @@
 #upButton{
-    position: sticky;
+    position: fixed;
 
     /* POSITION */
-    bottom: 0.5rem;
-    right: 0;
-    left: auto;
+    bottom: 1rem;
+    right: 1rem;
 
     /* SIZE */
-    width: 5rem; /* BUG: For some reason the limit is 53px */
-    height: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
 
     /* ROUNDING CORNERS */
     border-radius: 50%;
     border: none;
 
-    background: indianred;
+    background: darkgrey;
 
     font-size: 3rem;
 
@@ -26,7 +25,8 @@
 
 #upButton:active,
 #upButton:hover{
-    background: darkred;
+    background: lightgrey;
 
-    box-shadow: 8px 8px 8px black;
+    border: darkgrey solid 1px;
+    box-shadow: 4px 4px 8px black;
 }
