@@ -10,6 +10,7 @@
     flex-direction: row;
 
     background: whitesmoke;
+    outline: lightslategrey solid 1px;
 
     margin-left: auto;
     margin-right: auto;
