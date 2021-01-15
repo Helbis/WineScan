@@ -32,9 +32,9 @@
     </head>
     <body>
         <div id="app">
-            <div class="collectionsView">
-                <input id="searchBar" type="text" placeholder="Search...">
+            <input id="searchBar" type="text" placeholder="Search...">
 
+            <div class="collectionsView">
                 <template id="temp_card">
                     <div class="card">
                         <img class="left_of_card"
@@ -60,10 +60,6 @@
                     </div>
                 </template>
 
-                <div id="here">
-
-                </div>
-
                 <script type="text/javascript">
                 // Make multiple cards
                 // IIFE
@@ -73,25 +69,26 @@
                     const temp_card = document.getElementById("temp_card");
                     const card = temp_card.content;
                     const first = card.firstElementChild;
-                    const here = document.getElementById("here");
+                    const here = document.getElementsByClassName("collectionsView")[0];
 
                     console.log(temp_card);
                     console.log(card);
                     console.log(first);
                     console.log(here);
 
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < 50; i++) {
                         here.appendChild(first.cloneNode(true));
                     }
                 }());
                 </script>
 
-                <button id="upButton"
-                    type="button"
-                    name="upButton"
-                    onclick="scrollUp()"
-                    >&#11165;</button>
             </div>
+
+            <button id="upButton"
+            type="button"
+            name="upButton"
+            onclick="scrollUp()"
+            >&#11165;</button>
 
             <article class="detailsView inactive">
                 <header class="details-top">
