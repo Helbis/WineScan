@@ -23,6 +23,15 @@ function closeDetails() {
     });
 }
 
+// Side panel
+function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
 // Website for symbols
 // https://www.htmlsymbols.xyz/search?q=dot
 function changeFoldState(id) {
@@ -49,8 +58,10 @@ window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("searchBar").style.top = "0";
+        document.getElementById("moreBtn").style.top = "0";
     } else {
         document.getElementById("searchBar").style.top = "-100px";
+        document.getElementById("moreBtn").style.top = "-100px";
     }
     prevScrollpos = currentScrollPos;
 

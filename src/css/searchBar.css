@@ -1,4 +1,9 @@
+#searchBar, #moreBtn{
+
+}
+
 #searchBar{
+    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
 
@@ -12,8 +17,6 @@
 
     transition: top 0.5s;
 
-    margin-top: 1rem;
-
     padding-left: 3ch;
     padding-right: 3ch;
 
@@ -23,4 +26,25 @@
     /* border: border-width border-style border-color|initial|inherit */
     border: 2px solid dimgrey;
     border-radius: 10px;
+}
+
+#moreBtn{
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: 2rem;
+
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: 0;
+
+    font-size: 2rem;
+    background: none;
+    border: none;
+
+    transition: top 0.5s;
+}
+#moreBtn:active,
+#moreBtn:hover{
+    color: floralwhite;
 }
