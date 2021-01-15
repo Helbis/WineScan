@@ -76,14 +76,8 @@
                     'use strict';
 
                     const temp_card = document.getElementById("temp_card");
-                    const card = temp_card.content;
-                    const first = card.firstElementChild;
+                    const first = temp_card.content.firstElementChild;
                     const here = document.getElementsByClassName("collectionsView")[0];
-
-                    console.log(temp_card);
-                    console.log(card);
-                    console.log(first);
-                    console.log(here);
 
                     for (let i = 0; i < 50; i++) {
                         here.appendChild(first.cloneNode(true));
