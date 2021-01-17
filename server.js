@@ -6,9 +6,10 @@ const port = 3000;
 const mysql = require('mysql');
 let connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'todoapp'
+    port: '3306',
+    user: 'Helbis',
+    password: 'winescan',
+    database: 'wines'
 });
 
 connection.connect(err => {
