@@ -67,9 +67,9 @@ CREATE TABLE IF NOT EXISTS Wine (
 
 CREATE TABLE IF NOT EXISTS Wine_year (
     `id` INT NOT NULL PRIMARY KEY,
-    `year` YEAR NOT NULL,
+    `bottling_year` YEAR NOT NULL,
     `rating` INT,
-    `photo` VARCHAR(100),
+    `photo` VARCHAR(300),
     `id_wine` INT NOT NULL,
 
     CONSTRAINT `wine_year__wine`
@@ -80,8 +80,8 @@ CREATE TABLE IF NOT EXISTS Wine_year (
 
 CREATE TABLE IF NOT EXISTS Invoice (
     `id` INT NOT NULL PRIMARY KEY,
-    `date` DATE NOT NULL,
-    `number` VARCHAR(20),
+    `creation_date` DATE NOT NULL,
+    `order_number` VARCHAR(20),
     `total_price` INT,
     `note` VARCHAR(500),
     `id_suplier` INT NOT NULL,
