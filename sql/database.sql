@@ -1,16 +1,16 @@
 CREATE DATABASE IF NOT EXISTS WineScan;
 
--- SELECT * FROM Taste;
--- SELECT * FROM Variety;
--- SELECT * FROM Style;
--- SELECT * FROM Localization;
--- SELECT * FROM Volumes;
--- SELECT * FROM Suplier;
+SELECT * FROM Taste;
+SELECT * FROM Variety;
+SELECT * FROM Style;
+SELECT * FROM Localization;
+SELECT * FROM Volumes;
+SELECT * FROM Suplier;
 -- SELECT * FROM User;
--- SELECT * FROM Wine;
--- SELECT * FROM Wine_year;
--- SELECT * FROM Invoice;
--- SELECT * FROM Bottle;
+SELECT * FROM Wine;
+SELECT * FROM Wine_year;
+SELECT * FROM Invoice;
+SELECT * FROM Bottle;
 
 -- source /home/helbis/Documents/TCS/WineScan/sql/tables.sql;
 -- source /home/helbis/Documents/TCS/WineScan/sql/taste.sql;

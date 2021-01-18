@@ -2,24 +2,31 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// MySQL
+// MySQL https://www.npmjs.com/package/mysql#introduction
 const mysql = require('mysql');
 let connection = mysql.createConnection({
     host: 'localhost',
     port: '3306',
     user: 'Helbis',
     password: 'winescan',
-    database: 'wines'
+    database: 'WineScan'
 });
 
-connection.connect(err => {
-    if (err) {
-        return console.error('error: ' + err.message);
+connection.connect(error => {
+    if (error) {
+        return console.error('error: ' + error.message);
     }
 
     console.log('Connected to the MySQL server.');
 });
 
+connection.query('SELECT * FROM Volumes', (error, results, fields) => {
+    if (error) throw error;
+
+    console.table(results[0]);
+});
+
+connection.end();
 
 // express server
 app.use(express.static('./'));
