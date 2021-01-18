@@ -1,107 +1,126 @@
-CREATE TABLE `Bottle` (
-  `ID` INT,
-  `Price` DECIMAL(7, 2),
-  `ID_Volume` INT,
-  `Friends` VARCHAR(200),
-  `Creation_Date` DATE,
-  `Deletion_Date` DATE,
-  `Scanned_code` INT,
-  `ID_Localization` INT,
-  `ID_Invoice` INT,
-  `ID_year` INT,
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`Price`, `Creation_Date`),
-  KEY `NN, FK` (`ID_Volume`, `ID_year`)
+CREATE TABLE IF NOT EXISTS Taste (
+    `id` INT NOT NULL PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE `Invoice` (
-  `ID` INT,
-  `date` DATE,
-  `Number` VARCHAR(20),
-  `Total_price` INT,
-  `note` VARCHAR(500),
-  `ID_suplier` INT,
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`date`),
-  KEY `NN, FK` (`ID_suplier`)
+CREATE TABLE IF NOT EXISTS Variety (
+    `id` INT NOT NULL PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE `Taste` (
-  `ID` INT,
-  `Name` VARCHAR(100),
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`Name`)
+CREATE TABLE IF NOT EXISTS Style (
+    `id` INT NOT NULL PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE `Wine_year` (
-  `ID` INT,
-  `year` YEAR,
-  `Rating` INT,
-  `photo` VARCHAR(100),
-  `ID_wine` INT,
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`year`),
-  KEY `NN, FK` (`ID_wine`)
+CREATE TABLE IF NOT EXISTS Localization (
+    `id` INT NOT NULL PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE `Localization` (
-  `ID` INT,
-  `Name` VARCHAR(100),
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`Name`)
+CREATE TABLE IF NOT EXISTS Volumes (
+    `id` INT NOT NULL PRIMARY KEY,
+    `name` VARCHAR(200) NOT NULL,
+    `volume` DECIMAL(5,3) NOT NULL
 );
 
-CREATE TABLE `Wine` (
-  `ID` INT,
-  `Name` VARCHAR(100),
-  `Description` VARCHAR(5000),
-  `ID_Taste` INT,
-  `ID_Variety` INT,
-  `ID_Style` INT,
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`Name`),
-  KEY `NN, FK` (`ID_Style`)
+CREATE TABLE IF NOT EXISTS Suplier (
+    `id` INT NOT NULL PRIMARY KEY,
+    `name` VARCHAR(200) NOT NULL,
+    `phone_number` VARCHAR(20),
+    `email` VARCHAR(200),
+    `note` VARCHAR(2000)
 );
 
-CREATE TABLE `Suplier` (
-  `ID` INT,
-  `Name` VARCHAR(200),
-  `phone_number` VARCHAR(20),
-  `email` VARCHAR(200),
-  `note` VARCHAR(2000),
-  KEY `NN, PK` (`ID`),
-  KEY `NN, U` (`Name`)
+CREATE TABLE IF NOT EXISTS User (
+    `id` INT NOT NULL PRIMARY KEY,
+    `name` VARCHAR(256) NOT NULL,
+    `email` VARCHAR(256),
+    `creation_date` DATE NOT NULL,
+    `password_hashed` VARCHAR(256) NOT NULL,
+    `photo` VARCHAR(100)
 );
 
-CREATE TABLE `Volumes` (
-  `ID` INT,
-  `NAME` VARCHAR(200),
-  `VOLUME` DECIMAL(5,3),
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`NAME`, `VOLUME`)
+CREATE TABLE IF NOT EXISTS Wine (
+    `id` INT NOT NULL PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL,
+    `description` VARCHAR(5000),
+    `id_taste` INT,
+    `id_variety` INT,
+    `id_style` INT NOT NULL,
+
+    CONSTRAINT `wine_taste`
+        FOREIGN KEY (`id_taste`) REFERENCES `Taste`(id)
+        ON DELETE CASCADE
+        ON UPDATE RESTRICT,
+
+    CONSTRAINT `wine_variety`
+        FOREIGN KEY (`id_variety`) REFERENCES `Variety`(id)
+        ON DELETE CASCADE
+        ON UPDATE RESTRICT,
+
+    CONSTRAINT `wine_style`
+        FOREIGN KEY (`id_style`) REFERENCES `Style`(id)
+        ON DELETE CASCADE
+        ON UPDATE RESTRICT
 );
 
-CREATE TABLE `Style` (
-  `ID` INT,
-  `Name` VARCHAR(100),
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`Name`)
+CREATE TABLE IF NOT EXISTS Wine_year (
+    `id` INT NOT NULL PRIMARY KEY,
+    `year` YEAR NOT NULL,
+    `rating` INT,
+    `photo` VARCHAR(100),
+    `id_wine` INT NOT NULL,
+
+    CONSTRAINT `wine_year__wine`
+        FOREIGN KEY (`id_wine`) REFERENCES `Wine`(id)
+        ON DELETE CASCADE
+        ON UPDATE RESTRICT
 );
 
-CREATE TABLE `User` (
-  `ID` INT,
-  `Name` VARCHAR(256),
-  `email` VARCHAR(256),
-  `Creation_Date` Date,
-  `password_hashed` VARCHAR(256),
-  `photo` VARCHAR(100),
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`Name`, `Creation_Date`, `password_hashed`)
+CREATE TABLE IF NOT EXISTS Invoice (
+    `id` INT NOT NULL PRIMARY KEY,
+    `date` DATE NOT NULL,
+    `number` VARCHAR(20),
+    `total_price` INT,
+    `note` VARCHAR(500),
+    `id_suplier` INT NOT NULL,
+
+    CONSTRAINT `invoice_suplier`
+        FOREIGN KEY (`id_suplier`) REFERENCES `Suplier`(id)
+        ON DELETE CASCADE
+        ON UPDATE RESTRICT
 );
 
-CREATE TABLE `Variety` (
-  `ID` INT,
-  `Name` VARCHAR(100),
-  KEY `NN, PK` (`ID`),
-  KEY `NN` (`Name`)
+CREATE TABLE IF NOT EXISTS Bottle (
+    `id` INT NOT NULL PRIMARY KEY,
+    `price` DECIMAL(7, 2) NOT NULL,
+    `id_volume` INT NOT NULL,
+    `friends` VARCHAR(200),
+    `creation_date` DATE NOT NULL,
+    `deletion_date` DATE,
+    `scanned_code` INT,
+    `id_localization` INT,
+    `id_invoice` INT,
+    `id_year` INT NOT NULL,
+
+    CONSTRAINT `bottle_volume`
+        FOREIGN KEY (`id_volume`) REFERENCES `Volumes`(id)
+        ON DELETE CASCADE
+        ON UPDATE RESTRICT,
+
+    CONSTRAINT `bottle_Localization`
+        FOREIGN KEY (`id_localization`) REFERENCES `Localization`(id)
+        ON DELETE CASCADE
+        ON UPDATE RESTRICT,
+
+    CONSTRAINT `bottle_invoice`
+        FOREIGN KEY (`id_invoice`) REFERENCES `Invoice`(id)
+        ON DELETE CASCADE
+        ON UPDATE RESTRICT,
+
+    CONSTRAINT `bottle_wine_year`
+        FOREIGN KEY (`id_year`) REFERENCES `Wine_year`(id)
+        ON DELETE CASCADE
+        ON UPDATE RESTRICT
 );
