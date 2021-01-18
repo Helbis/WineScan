@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();
+const server = express();
 const port = 3000;
 
 // MySQL https://www.npmjs.com/package/mysql#introduction
@@ -23,20 +23,25 @@ connection.connect(error => {
 connection.query('SELECT * FROM Volumes', (error, results, fields) => {
     if (error) throw error;
 
-    console.table(results[0]);
+    results.forEach((item, i) => {
+        console.table({'name': item.name, 'volume': item.volume});
+    });
+
+    // console.table(results[0]['name']);
 });
 
 connection.end();
 
 // express server
-app.use(express.static('./'));
-app.use(express.static('./public'));
+server.use(express.static('./'));
+server.use(express.static('./public'));
 
-app.get('/', (req, res) => {
+server.get('/', (req, res, next) => {
     res.send('./index.html');
+    next();
 });
 
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+server.listen(port, () => {
+    console.log(`Example server listening at http://localhost:${port}`);
 });

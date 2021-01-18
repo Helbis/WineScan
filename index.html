@@ -24,6 +24,7 @@
 
     <!-- JavaScript -->
     <script src="./public/javascripts/functions.js" charset="utf-8"></script>
+    <script src="./public/javascripts/iife.js" charset="utf-8"></script>
 
     <!-- TODO: Set the font faces -->
     <!-- FROM: https://www.fontsquirrel.com -->
@@ -68,22 +69,6 @@
                     </div>
                 </div>
             </template>
-
-            <script type="text/javascript">
-                // Make multiple cards
-                // IIFE
-                (function() {
-                    'use strict';
-
-                    const temp_card = document.getElementById("temp_card");
-                    const first = temp_card.content.firstElementChild;
-                    const here = document.getElementsByClassName("collectionsView")[0];
-
-                    for (let i = 0; i < 50; i++) {
-                        here.appendChild(first.cloneNode(true));
-                    }
-                }());
-            </script>
 
         </div>
 
