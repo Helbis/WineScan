@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Helbis/WineScan#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "socket.io": "^3.1.0"
   }
 }

@@ -24,7 +24,6 @@
 
     <!-- JavaScript -->
     <script src="./public/javascripts/functions.js" charset="utf-8"></script>
-    <script src="./public/javascripts/iife.js" charset="utf-8"></script>
 
     <!-- TODO: Set the font faces -->
     <!-- FROM: https://www.fontsquirrel.com -->
@@ -35,6 +34,31 @@
 </head>
 
 <body>
+    <form id="form" action="index.html" method="post">
+        <input id="input" type="text" name="" value="Hello">
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+    </script>
+
+    <!-- <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        var socket = io();
+
+        var form = document.getElementById('form');
+        var input = document.getElementById('input');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (input.value) {
+                socket.emit('chat message', input.value);
+                input.value = '';
+            }
+        });
+    </script> -->
+
     <div id="app">
         <div id="mySidenav" class="sidenav">
             <button class="closebtn" onclick="closeNav()">&times;</button>
@@ -69,7 +93,7 @@
                     </div>
                 </div>
             </template>
-
+            <script src="./public/javascripts/iife.js" charset="utf-8"></script>
         </div>
 
         <button id="upButton" type="button" name="upButton" onclick="scrollUp()">&#11165;</button>
