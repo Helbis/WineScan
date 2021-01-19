@@ -10,7 +10,7 @@
 
     <!-- FAVICON -->
     <!-- TODO: Make svg favicons work -->
-    <link rel="icon" href="./public/assets/icon.svg" />
+    <!-- <link rel="icon" href="./public/assets/icon.svg" /> -->
 
     <!-- CSS -->
     <!-- TODO: Make division for different sizes of the screen -->
@@ -34,30 +34,36 @@
 </head>
 
 <body>
-    <form id="form" action="index.html" method="post">
+    <!-- <form id="form" action="">
         <input id="input" type="text" name="" value="Hello">
-    </form>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-        var socket = io();
-    </script>
+    </form> -->
 
     <!-- <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        console.log(socket);
+    </script> -->
+
+    <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
         var socket = io();
+        // var form = document.getElementById('form');
+        // var input = document.getElementById('input');
 
-        var form = document.getElementById('form');
-        var input = document.getElementById('input');
+        // form.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+        //     if (input.value) {
+        //         socket.emit('chat message', input.value);
+        //         input.value = '';
+        //     }
+        // });
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (input.value) {
-                socket.emit('chat message', input.value);
-                input.value = '';
-            }
+        socket.on('back2front', (msg) => {
+            console.table(msg);
+            // console.log('😄\tmessage: ' + msg);
+            // socket.emit('chat message', {name: 'hello'});
         });
-    </script> -->
+    </script>
 
     <div id="app">
         <div id="mySidenav" class="sidenav">
