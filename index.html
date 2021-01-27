@@ -24,7 +24,7 @@
 
     <!-- JavaScript -->
     <script src="./public/javascripts/functions.js" charset="utf-8"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2/dist/quagga.min.js"></script>
     <!-- TODO: Set the font faces -->
     <!-- FROM: https://www.fontsquirrel.com -->
     <!-- HOW TO SET UP: https://www.youtube.com/watch?v=KzqQXDbDvus -->
@@ -34,41 +34,18 @@
 </head>
 
 <body>
-    <!-- <form id="form" action="">
-        <input id="input" type="text" name="" value="Hello">
-    </form> -->
-
-    <!-- <script src="/socket.io/socket.io.js"></script>
-    <script>
-        var socket = io();
-        console.log(socket);
-    </script> -->
-
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
-        var socket = io();
-        // var form = document.getElementById('form');
-        // var input = document.getElementById('input');
-
-        // form.addEventListener('submit', (e) => {
-        //     e.preventDefault();
-        //     if (input.value) {
-        //         socket.emit('chat message', input.value);
-        //         input.value = '';
-        //     }
-        // });
+        const socket = io();
 
         socket.on('back2front', (msg) => {
             console.table(msg);
-            // console.log('😄\tmessage: ' + msg);
-            // socket.emit('chat message', {name: 'hello'});
         });
     </script>
 
     <div id="app">
         <div id="mySidenav" class="sidenav">
             <button class="closebtn" onclick="closeNav()">&times;</button>
-            <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>

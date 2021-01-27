@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Volumes (
     `volume` DECIMAL(5,3) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Suplier (
+CREATE TABLE IF NOT EXISTS Supplier (
     `id` INT NOT NULL PRIMARY KEY,
     `name` VARCHAR(200) NOT NULL,
     `phone_number` VARCHAR(20),
@@ -84,10 +84,10 @@ CREATE TABLE IF NOT EXISTS Invoice (
     `order_number` VARCHAR(20),
     `total_price` INT,
     `note` VARCHAR(500),
-    `id_suplier` INT NOT NULL,
+    `id_supplier` INT NOT NULL,
 
-    CONSTRAINT `invoice_suplier`
-        FOREIGN KEY (`id_suplier`) REFERENCES `Suplier`(id)
+    CONSTRAINT `invoice_supplier`
+        FOREIGN KEY (`id_supplier`) REFERENCES `Supplier`(id)
         ON DELETE CASCADE
         ON UPDATE RESTRICT
 );

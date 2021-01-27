@@ -30,9 +30,6 @@ connection.query('SELECT * FROM Volumes', (error, results, fields) => {
 
     console.table(results);
     sqlResult = results;
-    // results.forEach((item, i) => {
-    //     console.table({'name': item.name, 'volume': item.volume});
-    // });
 });
 
 connection.end();
@@ -66,3 +63,27 @@ io.on('connection', (socket) => {
         console.log('😲\tuser disconnected');
     });
 });
+
+
+// Quagga
+// const Quagga = require('quagga').default;
+//
+// Quagga.decodeSingle({
+//     src: "./public/images/blanc_small_100x163.jpg",
+//     numOfWorkers: 0,  // Needs to be 0 when used within node
+//     inputStream: {
+//         size: 800  // restrict input-size to be 800px in width (long-side)
+//     },
+//     decoder: {
+//         readers: ["code_128_reader"] // List of active readers
+//     },
+// }, function(result) {
+//     if (result) {
+//         console.log(result);
+//         if(result.codeResult) {
+//             console.log("result", result.codeResult.code);
+//         } else {
+//             console.log("not detected");
+//         }
+//     }
+// });
