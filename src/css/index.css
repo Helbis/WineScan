@@ -1,5 +1,9 @@
+:root{
+    background: indianred;
+}
+
 body{
-    background: cadetblue;
+    /* background: cadetblue; */
 
     margin: 0;
     padding: 0;

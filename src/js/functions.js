@@ -25,7 +25,7 @@ function closeDetails() {
 
 // Side panel
 function openNav() {
-    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("mySidenav").style.width = "20rem";
 }
 
 function closeNav() {
