@@ -58,10 +58,10 @@ window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("searchBar").style.top = "0";
-        document.getElementById("moreBtn").style.top = "0";
+        // document.getElementById("moreBtn").style.top = "0";
     } else {
         document.getElementById("searchBar").style.top = "-100px";
-        document.getElementById("moreBtn").style.top = "-100px";
+        // document.getElementById("moreBtn").style.top = "-100px";
     }
     prevScrollpos = currentScrollPos;
 
@@ -73,6 +73,6 @@ window.onscroll = () => {
     }
 
     // Close detailsView & sideNav
-    closeNav();
+    // closeNav();
     closeDetails();
 }

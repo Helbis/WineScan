@@ -42,19 +42,39 @@
 
 <body>
     <div id="app">
-        <div id="mySidenav" class="sidenav">
+        <!-- <nav id="mySidenav" class="sidenav">
             <button class="closebtn" onclick="closeNav()">&times;</button>
+
             <a href="#">Add new</a>
             <a href="mailto:filiphelbig97@gmail.com?subject=WineScan">email me</a>
-            <a href="https://github.com/Helbis/WineScan">GitHub</a>
-        </div>
+            <a href="https://github.com/Helbis/WineScan">
+                <img src="./public/icons/github/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo">
+                GitHub
+            </a>
+        </nav>
 
         <div id="topBar">
             <label>
                 <input id="searchBar" type="text" placeholder="Search...">
             </label>
             <button id="moreBtn" type="button" name="sideNavBtn" onclick="openNav()">&plus;</button>
-        </div>
+        </div> -->
+
+        <nav id="topBar">
+            <label>
+                <input id="searchBar" type="text" placeholder="Search...">
+            </label>
+
+            <a href="#" alt="Add new element">
+                &plus;
+            </a>
+            <a href="mailto:filiphelbig97@gmail.com?subject=WineScan">
+                @
+            </a>
+            <a href="https://github.com/Helbis/WineScan">
+                <img src="./public/icons/github/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo">
+            </a>
+        </nav>
 
         <div class="collectionsView">
             <template id="temp_card">
