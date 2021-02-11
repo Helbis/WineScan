@@ -1,4 +1,6 @@
 .card{
+    height: 160px;
+    
     flex-basis: 300px;
     flex-grow: 0.2;
     flex-shrink: 1;
@@ -10,7 +12,9 @@
     flex-direction: row;
 
     background: whitesmoke;
-    outline: lightslategrey solid 1px;
+    /* outline: lightslategrey solid 1px; */
+    border-style: none;
+    border-radius: 5px;
 
     margin-left: auto;
     margin-right: auto;
@@ -22,7 +26,7 @@
     align-self: center;
 
     width: 100px;
-    height: 100px;
+    height: 80%;
 
     margin: 1rem;
     padding: 0;
@@ -57,14 +61,15 @@
     padding: 0.5rem;
 }
 .right_of_card > button {
-    background: lightpink;
+    background: lightgrey;
 
     width: 10ch;
     height: 4ch;
 
-    /* border-radius: 15%; */
+    border-style: none;
+    border-radius: 5px;
 }
 .right_of_card > button:active,
 .right_of_card > button:hover {
-    background: lightcoral;
+    background: var(--color-accent, red);
 }

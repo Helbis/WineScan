@@ -49,7 +49,9 @@
         </div>
 
         <div id="topBar">
-            <input id="searchBar" type="text" placeholder="Search...">
+            <label>
+                <input id="searchBar" type="text" placeholder="Search...">
+            </label>
             <button id="moreBtn" type="button" name="sideNavBtn" onclick="openNav()">&plus;</button>
         </div>
 
@@ -89,56 +91,55 @@
                 }());
             </script>
 
+            <article class="detailsView inactive">
+                <header class="details-top">
+                    <img class="left_of_card" src="./public/photos/blanc_big_474x774.jpg" alt="wine" loading="lazy">
+
+                    <div class="middle_of_card basicInfo">
+                        <p class="wine_name">name</p>
+                        <p class="wine_year">year</p>
+                        <p class="wine_style">style</p>
+                    </div>
+
+                    <div class="creationDate">
+                        <p>dd-mm-yy</p>
+                    </div>
+
+                    <button type="button" name="exit" onclick="closeDetails()" class="details-exit">
+                        &times;
+                    </button>
+                </header>
+                <hr class="afterTop">
+
+                <main class="details-main">
+                    <section class="description">
+                        <p class="sectionTitle">
+                            Description
+                        </p>
+
+                        <button type="button" name="button" class="foldingBtn" id="moreDesc" onclick="changeFoldState('moreDesc')"> &#129155;
+                        </button>
+                    </section>
+                    <hr>
+
+                    <section class="invoices">
+                        <p class="sectionTitle">
+                            Invoices
+                        </p>
+
+                        <button type="button" name="button" class="foldingBtn" id="moreInv" onclick="changeFoldState('moreInv')" onload="alert('moreInv')"> &#129155;
+                        </button>
+                    </section>
+                    <hr>
+                </main>
+
+                <footer>
+                    <p class="num_of_bottles">Bottles : 842</p>
+                </footer>
+            </article>
         </div>
 
         <button id="upButton" type="button" name="upButton" onclick="scrollUp()">TOP</button>
-
-        <article class="detailsView inactive">
-            <header class="details-top">
-                <img class="left_of_card" src="./public/photos/blanc_big_474x774.jpg" alt="wine" loading="lazy">
-
-                <div class="middle_of_card basicInfo">
-                    <p class="wine_name">name</p>
-                    <p class="wine_year">year</p>
-                    <p class="wine_style">style</p>
-                </div>
-
-                <div class="creationDate">
-                    <p>Created on <br> {{ creationDate }}</p>
-                </div>
-
-                <button type="button" name="exit" onclick="closeDetails()" class="details-exit">
-                    &times;
-                </button>
-            </header>
-            <hr class="afterTop">
-
-            <main class="details-main">
-                <section class="description">
-                    <p class="sectionTitle">
-                        Description
-                    </p>
-
-                    <button type="button" name="button" class="foldingBtn" id="moreDesc" onclick="changeFoldState('moreDesc')"> &#129155;
-                    </button>
-                </section>
-                <hr>
-
-                <section class="invoices">
-                    <p class="sectionTitle">
-                        Invoices
-                    </p>
-
-                    <button type="button" name="button" class="foldingBtn" id="moreInv" onclick="changeFoldState('moreInv')" onload="alert('moreInv')"> &#129155;
-                    </button>
-                </section>
-                <hr>
-            </main>
-
-            <footer>
-                <p class="num_of_bottles">Bottles : 842</p>
-            </footer>
-        </article>
     </div>
 </body>
 

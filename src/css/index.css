@@ -1,9 +1,13 @@
 :root{
-    background: indianred;
+    /* background: indianred; */
+
+    /* Colors */
+    --color-main: indianred;
+    --color-accent: lightcoral;
 }
 
 body{
-    /* background: cadetblue; */
+    background: var(--color-main, green);
 
     margin: 0;
     padding: 0;
@@ -13,6 +17,7 @@ body{
     text-align: center;
 
     margin: 0;
+    margin-bottom: 2rem;
     padding: 0;
 }
 
