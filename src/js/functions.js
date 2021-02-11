@@ -35,15 +35,15 @@ function closeNav() {
 // Website for symbols
 // https://www.htmlsymbols.xyz/search?q=dot
 function changeFoldState(id) {
-    const upArrow = "\uD83E\uDC81";
-    const downArrow = "\uD83E\uDC83";
+    const unFold = "unfold";
+    const fold = "fold";
 
     const elm = document.getElementById(id);
 
-    if (elm.innerText == upArrow) {
-        elm.innerText = downArrow;
-    } else if (elm.innerText == downArrow) {
-        elm.innerText = upArrow;
+    if (elm.innerText == fold) {
+        elm.innerText = unFold;
+    } else if (elm.innerText == unFold) {
+        elm.innerText = fold;
     }
 }
 
@@ -71,4 +71,8 @@ window.onscroll = () => {
     } else {
         document.getElementById("upButton").style.display = "none";
     }
+
+    // Close detailsView & sideNav
+    closeNav();
+    closeDetails();
 }

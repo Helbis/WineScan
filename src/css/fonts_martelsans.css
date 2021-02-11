@@ -1,48 +1,48 @@
 @font-face {
     font-family: 'martel_sans';
-    src: url('./martelsans-regular-webfont.woff') format('woff');
+    src: url('/src/fonts/martelsans/martelsans-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'martel_sans';
-    src: url('./martelsans-light-webfont.woff') format('woff');
+    src: url('./src/fonts/martelsans/martelsans-light-webfont.woff') format('woff');
     font-weight: lighter;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'martel_sans';
-    src: url('./martelsans-ultralight-webfont.woff') format('woff');
+    src: url('./src/fonts/martelsans/martelsans-ultralight-webfont.woff') format('woff');
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'martel_sans';
-    src: url('./martelsans-bold-webfont.woff') format('woff');
+    src: url('./src/fonts/martelsans/martelsans-bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'martel_sans';
-    src: url('./martelsans-demibold-webfont.woff') format('woff');
+    src: url('./src/fonts/martelsans/martelsans-demibold-webfont.woff') format('woff');
     font-weight: bolder;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'martel_sans';
-    src: url('./martelsans-extrabold-webfont.woff') format('woff');
+    src: url('./src/fonts/martelsans/martelsans-extrabold-webfont.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'martel_sans';
-    src: url('./martelsans-heavy-webfont.woff') format('woff');
+    src: url('./src/fonts/martelsans/martelsans-heavy-webfont.woff') format('woff');
     font-weight: 900;
     font-style: normal;
 }

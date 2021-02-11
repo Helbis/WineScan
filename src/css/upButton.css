@@ -29,6 +29,5 @@
 #upButton:hover{
     background: var(--color-accent, red);
 
-    /* border: darkgrey solid 1px; */
     box-shadow: 4px 4px 8px black;
 }

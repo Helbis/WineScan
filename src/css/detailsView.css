@@ -3,6 +3,8 @@
     top: 50%;
     left: 50%;
 
+    z-index: 2;
+
     margin: 0;
     padding: 0;
 
@@ -16,6 +18,7 @@
     min-width: 400px;
     max-width: 800px;
     min-height: 50%;
+    max-height: 80vh;
 
     transition: 0.3s ease-in-out;
 }
@@ -41,12 +44,8 @@
     height: 150px;
 }
 
-.basicInfo{
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.creationDate{
+.basicInfo, .creationDate, button.foldingBtn{
+    /* Center vertically */
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -103,15 +102,11 @@ button.foldingBtn{
     background: dodgerblue;
     color: black;
 
-    /* font-size: 1.5rem; */
+    font-family: sans-serif;
     font-weight: bold;
 
     border-radius: 5px;
     border-style: none;
-
-    /* Center vertically */
-    margin-top: auto;
-    margin-bottom: auto;
 
     width: 9ch;
     height: 4ch;
