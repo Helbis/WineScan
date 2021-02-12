@@ -1,30 +1,49 @@
 nav#topBar{
     z-index: 0;
-    margin-top: 1rem;
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
     
+    padding: 1rem;
+    
     display: flex;
     flex-direction: row;
-
-    align-items: center;
+    flex-wrap: wrap;
+/*     flex-basis: 100px; */
+    gap: 1rem;
     
     max-width: 1000px;
-
-    /* max-height: 50px; */
+    height: 3rem;
+    
+    background: ;
 }
 
-nav#topBar > * {
-    display: block;
+nav#topBar > label {
+    margin-left: 0.5rem;
     
-    max-height: 50px;
+    font-size: 1.25rem;
+    
+    border-radius: 5px;
+}
 
-    margin: auto;
+nav#topBar > label > input{
+    padding-left: 1rem;
+    padding-right: 1rem;
     
-    color: white;
+    margin: 0;
+    font-size: 1.25rem;
+    
+    height: 100%;
+    
+    border: none;
+    border-radius: 5px;
+}
+
+nav#topBar > a {
+    height: inherit;
+    
     text-decoration: none;
-    font-weight: bold;
-    font-size: 32px;
+    text-align: center;
 }
 
 nav#topBar > label ~ a{
@@ -34,75 +53,21 @@ nav#topBar > label ~ a{
 
 nav#topBar > label + a{
     margin-right: 1rem;
-}
-
-nav#topBar > a > img{
-    height: 2rem;
-}
-
-nav#topBar > label {
-    margin-left: 1rem;
-}
-
-nav#topBar > label > input{
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    
-    font-size: 1.25rem;
-}
-
-nav#topBar > a :hover{
-    color: green;
-    border: aliceblue 2px solid;
-    background: pink;
-}
-
-/* #searchBar, #moreBtn{
-    margin-top: 1rem;
     margin-left: auto;
-
-    position: fixed;
-    top: 0;
-    right: 0;
-} */
-
-/* #searchBar{
-    margin-right: auto;
-
-    left: 0;
-
-    z-index: 0;
-
-    width: 24ch;
-    height: 2rem;
-
-    transition: top 0.5s;
-
-    padding-left: 3ch;
-    padding-right: 3ch; */
-
-    /* box-shadow: none|h-offset v-offset blur spread color */
-    /* box-shadow: 0px 0px 4px 4px dimgrey; */
-
-    /* border: border-width border-style border-color|initial|inherit */
-    /* border: 2px solid dimgrey;
-    border-radius: 10px;
-} */
-
-/* #moreBtn{
-    margin-right: 2rem;
-
-    left: auto;
-
-    font-size: 2rem;
-    background: none;
-    border: none;
-
-    transition: top 0.5s;
 }
-#moreBtn:active,
-#moreBtn:hover{
-    color: floralwhite;
-} */
+
+nav#topBar > a > * {    
+    margin: 0;
+    padding: 0;
+    height: inherit;
+    
+    color: lightgrey;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+nav#topBar > a > *:hover,
+nav#topBar > a > *:active{
+    color: white;
+}
