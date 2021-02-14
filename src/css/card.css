@@ -14,7 +14,7 @@
     background: whitesmoke;
     /* outline: lightslategrey solid 1px; */
     border-style: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius, 5px);
 
     margin-left: auto;
     margin-right: auto;
@@ -69,7 +69,7 @@
     height: 4ch;
 
     border-style: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius, 5px);
 }
 .right_of_card > button:active,
 .right_of_card > button:hover {

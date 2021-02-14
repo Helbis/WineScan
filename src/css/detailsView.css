@@ -99,13 +99,13 @@ p.sectionTitle{
 }
 
 button.foldingBtn{
-    background: dodgerblue;
+    background: var(--color-main, red);
     color: black;
 
     font-family: sans-serif;
     font-weight: bold;
 
-    border-radius: 5px;
+    border-radius: var(--border-radius, 5px);
     border-style: none;
 
     width: 9ch;
@@ -113,5 +113,5 @@ button.foldingBtn{
 }
 button.foldingBtn:active,
 button.foldingBtn:hover{
-    background: deepskyblue;
+    background: var(--color-accent, orange);
 }
