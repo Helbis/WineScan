@@ -41,9 +41,9 @@
 .middle_of_card{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+/*     justify-content: space-between; */
 
-    align-items: center;
+/*     align-items: center; */
     
     width: 50%;
     margin: 0 auto;
@@ -51,11 +51,22 @@
 }
 
 .middle_of_card > p.wine_name{
-    max-width: 16ch;
+    max-height: 8ch;
+    max-width: 24ch;
+    
+    margin-top: 1rem;
+    margin-bottom: auto;
 
     text-align: center;
     font-weight: bold;
     overflow-wrap: break-word;
+    overflow-y: clip;
+}
+
+.middle_of_card > .wine_style, 
+.middle_of_card > .wine_year{
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 /* Right part of the card */

@@ -11,4 +11,6 @@
     margin-right: auto;
 
     padding-top: 2rem;
+    
+    z-index: 0;
 }
