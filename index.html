@@ -60,8 +60,8 @@
 
                     <div class="middle_of_card">
                         <p class="wine_name">1234567890 1234567890</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
+                        <p class="wine_year">1997</p>
+                        <p class="wine_style">Red</p>
                     </div>
 
                     <div class="right_of_card">
@@ -73,21 +73,7 @@
                 </div>
             </template>
 
-            <script type="text/javascript">
-                // Make multiple cards
-                // IIFE
-                (function() {
-                    'use strict';
-
-                    const temp_card = document.getElementById("temp_card");
-                    const first = temp_card.content.firstElementChild;
-                    const here = document.getElementsByClassName("collectionsView")[0];
-
-                    for (let i = 0; i < 50; i++) {
-                        here.appendChild(first.cloneNode(true));
-                    }
-                }());
-            </script>
+            <script src="./main.js" type="text/javascript" defer charset="utf-8"></script>
 
             <article class="detailsView inactive">
                 <header class="details-top">
