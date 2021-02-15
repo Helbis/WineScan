@@ -45,10 +45,18 @@
 
     align-items: center;
 
-    margin: 0;
+    margin: auto;
     padding: 0;
 
     text-align: left;
+}
+
+.middle_of_card > p.wine_name{
+    max-width: 16ch;
+    display: block;
+    overflow-wrap: break-word;
+    height: 3ch;
+/*     overflow-y: auto; */
 }
 
 /* Right part of the card */

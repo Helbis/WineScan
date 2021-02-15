@@ -9,16 +9,14 @@ nav#topBar{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-/*     flex-basis: 100px; */
     gap: 1rem;
 
-    max-width: 1000px;
-    height: 3rem;
-
-    background: ;
+    max-width: var(--max-width-of-app, 1000px);
 }
 
 nav#topBar > label {
+    height: 3rem;
+
     margin-left: 0.5rem;
 
     font-size: 1.25rem;
@@ -27,8 +25,7 @@ nav#topBar > label {
 }
 
 nav#topBar > label > input{
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
 
     margin: 0;
     font-size: 1.25rem;
@@ -40,7 +37,7 @@ nav#topBar > label > input{
 }
 
 nav#topBar > a {
-    height: inherit;
+    height: 3rem;
 
     text-decoration: none;
     text-align: center;

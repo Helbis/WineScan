@@ -1,5 +1,5 @@
 .collectionsView{
-    max-width: 1000px;
+    max-width: var(--max-width-of-app, 1000px);
     height: 100%;
 
     display: flex;
