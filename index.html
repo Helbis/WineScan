@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./src/css/card.css">
     <link rel="stylesheet" href="./src/css/detailsView.css">
     <link rel="stylesheet" href="./src/css/upButton.css">
-    <link rel="stylesheet" href="./src/css/sideNav.css">
+    <!-- <link rel="stylesheet" href="./src/css/sideNav.css"> -->
 
     <!-- JavaScript -->
     <script src="./src/js/functions.js" charset="utf-8"></script>
@@ -34,9 +34,10 @@
     <div id="app">
 
         <nav id="topBar">
-            <label>
-                <input id="searchBar" type="text" placeholder="Search...">
-            </label>
+            <form class="searchForm" action="./src.js/functions.js" method="post" accept-charset="utf-8">
+                <label></label>
+                <input id="searchBar" type="text" placeholder="Search..." maxlength="16">
+            </form>
 
             <a rel="external" target="_blank" href="https://github.com/Helbis/WineScan">
                 <img src="./public/icons/github/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo">

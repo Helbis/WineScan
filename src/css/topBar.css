@@ -14,22 +14,24 @@ nav#topBar{
     max-width: var(--max-width-of-app, 1000px);
 }
 
-nav#topBar > label {
+nav#topBar > form {
+    width: 45%;
     height: 3rem;
 
-    margin-left: 0.5rem;
+    margin-left: 1rem;
 
     font-size: 1.25rem;
 
     border-radius: var(--border-radius, 5px);
 }
 
-nav#topBar > label > input{
+nav#topBar > form > input{
     padding: 0 1rem;
 
-    margin: 0;
+/*     margin: 0 auto; */
     font-size: 1.25rem;
-
+    
+    width: 100%;
     height: 100%;
 
     border: none;
@@ -43,12 +45,11 @@ nav#topBar > a {
     text-align: center;
 }
 
-nav#topBar > label ~ a{
-    margin-left: 1rem;
-    margin-right: 1rem;
+nav#topBar > form ~ a{
+    margin: 0 1rem;
 }
 
-nav#topBar > label + a{
+nav#topBar > form + a{
     margin-right: 1rem;
     margin-left: auto;
 }
@@ -60,7 +61,7 @@ nav#topBar > a > * {
 
     color: lightgrey;
     font-family: monospace;
-    font-weight: bold;
+/*     font-weight: bold; */
     font-size: 2.5rem;
 }
 

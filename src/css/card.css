@@ -1,23 +1,22 @@
 .card{
-    height: 160px;
-
-    flex-basis: 300px;
-    flex-grow: 0.2;
+    display: flex;
+    flex-direction: row;
+    
+    flex-basis: var(--max-width-of-card, 1000px);
+    flex-grow: 0.4;
     flex-shrink: 1;
 
     justify-content: space-between;
     flex-wrap: nowrap;
-
-    display: flex;
-    flex-direction: row;
-
-    background: whitesmoke;
-    /* outline: lightslategrey solid 1px; */
-    border-style: none;
-    border-radius: var(--border-radius, 5px);
-
+    
+    height: 200px;
+    
     margin-left: auto;
     margin-right: auto;
+
+    background: whitesmoke;
+    border-style: none;
+    border-radius: var(--border-radius, 5px);
 
     z-index: 0;
 }
@@ -27,10 +26,10 @@
     display: flex;
     align-self: center;
 
-    width: 100px;
+    width: 120px;
     height: 80%;
 
-    margin: 1rem;
+    margin: 1rem 0 1rem 1rem;
     padding: 0;
 
     outline: whitesmoke solid 2px;
@@ -42,21 +41,21 @@
 .middle_of_card{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     align-items: center;
-
-    margin: auto;
+    
+    width: 50%;
+    margin: 0 auto;
     padding: 0;
-
-    text-align: left;
 }
 
 .middle_of_card > p.wine_name{
     max-width: 16ch;
-    display: block;
+
+    text-align: center;
+    font-weight: bold;
     overflow-wrap: break-word;
-    height: 3ch;
-/*     overflow-y: auto; */
 }
 
 /* Right part of the card */

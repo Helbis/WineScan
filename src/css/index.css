@@ -5,11 +5,11 @@
 
     /* Corners and sizes */
     --border-radius: 5px;
-    --max-width-of-app: 1000px;
+    --max-width-of-app: 1200px;
+    --max-width-of-card: calc(--max-width-of-app / 6);
 
     /* Fonts */
     font-size: 16px;
-    /* font-style: normal; */
     font-family: sans-serif;
 }
 
