@@ -23,21 +23,6 @@ function closeDetails() {
     });
 }
 
-// Website for symbols
-// https://www.htmlsymbols.xyz/search?q=dot
-function changeFoldState(id) {
-    const unFold = "unfold";
-    const fold = "fold";
-
-    const elm = document.getElementById(id);
-
-    if (elm.innerText == fold) {
-        elm.innerText = unFold;
-    } else if (elm.innerText == unFold) {
-        elm.innerText = fold;
-    }
-}
-
 function scrollUp() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -63,13 +48,5 @@ window.onscroll = () => {
         document.getElementById("upButton").style.display = "none";
     }
 
-    // Close detailsView & sideNav
-    // closeNav();
     closeDetails();
-}
-
-
-// New element
-function hello(str) {
-    alert(str);
 }

@@ -16,11 +16,13 @@
 
     width: 80%;
     min-width: 400px;
-    max-width: 800px;
+    max-width: 42rem;
     min-height: 50%;
-    max-height: 80vh;
+    max-height: 90vh;
 
     transition: 0.3s ease-in-out;
+
+    overflow: scroll;
 }
 .detailsView.active{
     transform: translate(-50%, -50%) scale(1);
@@ -31,6 +33,12 @@
 
 /* top / header part of the view */
 .details-top{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    background: whitesmoke;
+
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -44,21 +52,23 @@
     height: 150px;
 }
 
-.basicInfo, .creationDate, .foldingBtn{
-    /* Center vertically */
-    margin-top: auto;
-    margin-bottom: auto;
+.basicInfo{
+    width: 50%;
 }
 
 /* Exit button */
 .details-exit{
+    height: 3rem;
+    width: 3rem;
+
     background: none;
     border: none;
     font-size: 2rem;
 
     color: black;
 
-    margin-top: 0;
+    padding: 0;
+    margin: 0;
 }
 .details-exit:hover,
 .details-exit:active{
@@ -71,19 +81,17 @@ hr.afterTop{
 }
 
 /* Main part of the view */
-.details-main{
+.details-main,
+.description,
+.invoices {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 .details-main > hr{
     width: 60%;
     color: lightgrey;
-}
-
-.description {
-    display: flex;
-    flex-direction: column;
 }
 
 .description > h1,
@@ -96,10 +104,13 @@ hr.afterTop{
 
     padding: 1rem;
     margin: 0;
+
+    font-weight: normal;
+    font-size: 1.5rem;
 }
 
 .description > p,
-.invoices > p{
+.invoices > p {
     display: block;
 
     max-width: 64ch;
@@ -109,17 +120,12 @@ hr.afterTop{
 
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-bottom: 1rem;
 
     text-align: left;
     font-size: 1rem;
 
     outline: var(--color-accent, red) solid 1px;
-}
-
-.sectionTitle{
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
 }
 
 /* Folding button for extra text */
