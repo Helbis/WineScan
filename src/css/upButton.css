@@ -1,12 +1,13 @@
 #upButton{
     position: fixed;
+    z-index: 1;
 
     display: none;
 
     /* POSITION */
     bottom: 1rem;
     right: 1rem;
-    
+
     padding: 0;
     margin: 0;
 
@@ -21,8 +22,6 @@
     background: lightpink;
 
     font-size: 1.5rem;
-
-    z-index: 1;
 }
 
 #upButton:active,

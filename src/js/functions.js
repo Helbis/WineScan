@@ -23,15 +23,6 @@ function closeDetails() {
     });
 }
 
-// Side panel
-function openNav() {
-    document.getElementById("mySidenav").style.width = "20rem";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-
 // Website for symbols
 // https://www.htmlsymbols.xyz/search?q=dot
 function changeFoldState(id) {
@@ -75,4 +66,10 @@ window.onscroll = () => {
     // Close detailsView & sideNav
     // closeNav();
     closeDetails();
+}
+
+
+// New element
+function hello(str) {
+    alert(str);
 }

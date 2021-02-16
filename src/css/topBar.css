@@ -15,6 +15,7 @@ nav#topBar{
 }
 
 nav#topBar > form {
+    min-width: 300px;
     width: 45%;
     height: 3rem;
 
@@ -30,7 +31,7 @@ nav#topBar > form > input{
 
 /*     margin: 0 auto; */
     font-size: 1.25rem;
-    
+
     width: 100%;
     height: 100%;
 
@@ -38,11 +39,19 @@ nav#topBar > form > input{
     border-radius: var(--border-radius, 5px);
 }
 
-nav#topBar > a {
+nav#topBar > * {
     height: 3rem;
 
     text-decoration: none;
     text-align: center;
+}
+
+nav#topBar > button {
+    color: lightgrey;
+    font-size: 2.5rem;
+
+    background: none;
+    border: none;
 }
 
 nav#topBar > form ~ a{
@@ -61,7 +70,6 @@ nav#topBar > a > * {
 
     color: lightgrey;
     font-family: monospace;
-/*     font-weight: bold; */
     font-size: 2.5rem;
 }
 

@@ -44,12 +44,13 @@
     height: 150px;
 }
 
-.basicInfo, .creationDate, button.foldingBtn{
+.basicInfo, .creationDate, .foldingBtn{
     /* Center vertically */
     margin-top: auto;
     margin-bottom: auto;
 }
 
+/* Exit button */
 .details-exit{
     background: none;
     border: none;
@@ -66,7 +67,7 @@
 
 hr.afterTop{
     width: 80%;
-    color: lightgrey;
+    color: darkslategrey;
 }
 
 /* Main part of the view */
@@ -76,12 +77,17 @@ hr.afterTop{
 }
 
 .details-main > hr{
-    width: 90%;
-    color: darkslategrey;
+    width: 60%;
+    color: lightgrey;
 }
 
-.details-main > .description,
-.details-main > .invoices{
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.description > h1,
+.invoices > h1{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -92,12 +98,32 @@ hr.afterTop{
     margin: 0;
 }
 
-p.sectionTitle{
-    margin: 0;
-    padding: 0;
+.description > p,
+.invoices > p{
+    display: block;
+
+    max-width: 64ch;
+    max-height: 16ch;
+
+    overflow-y: scroll;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    text-align: left;
+    font-size: 1rem;
+
+    outline: var(--color-accent, red) solid 1px;
 }
 
-button.foldingBtn{
+.sectionTitle{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+/* Folding button for extra text */
+.foldingBtn{
     background: var(--color-main, red);
     color: black;
 
@@ -110,7 +136,7 @@ button.foldingBtn{
     width: 9ch;
     height: 4ch;
 }
-button.foldingBtn:active,
-button.foldingBtn:hover{
+.foldingBtn:active,
+.foldingBtn:hover{
     background: var(--color-accent, orange);
 }
