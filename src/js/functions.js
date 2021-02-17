@@ -50,3 +50,10 @@ window.onscroll = () => {
 
     closeDetails();
 }
+
+
+function hello(str) {
+    let a = document.getElementById('test');
+    console.log(a);
+    // console.log(`hello ${str}`);
+}
