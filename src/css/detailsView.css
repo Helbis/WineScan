@@ -22,7 +22,7 @@
 
     transition: 0.3s ease-in-out;
 
-    overflow: scroll;
+/*     overflow: scroll; */
 }
 .detailsView.active{
     transform: translate(-50%, -50%) scale(1);

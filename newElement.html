@@ -12,12 +12,20 @@
 	    <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/pngIcons/favicon-32x32.png">
 	    <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/pngIcons/favicon-16x16.png">
 	    <link rel="manifest" href="./src/assets/pngIcons/site.webmanifest">
+
+		<!-- STYLE -->
+		<link rel="stylesheet" href="./src/css/newElement/index.css">
+
+		<!-- SCRIPTS -->
+		<script defer src="./src/js/formAction.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<nav>
 	        <a href="./index.html" target="_top" rel="prev">
 	            <img src="./src/assets/pngIcons/favicon-32x32.png" alt="Go back">
 	        </a>
+
+			<h1>Add new element</h1>
 	    </nav>
 
 
@@ -30,25 +38,22 @@
 
 			<fieldset>
 				<legend>Wine</legend>
-				<label for="wine_name">Name of the wine: </label>
+				<label for="wine_name">Name: </label>
 				<input type="text" id="wine_name" name="wine_name" placeholder="Rioja">
 
-				<br>
-				<label for="wine_description">Description for wine: </label>
+				<label for="wine_description">Description: </label>
 				<textarea id="wine_description" name="wine_description" rows="3" cols="40"></textarea>
 
-				<br>
 				<label for="taste">Taste: </label>
-				<select class="taste" name="taste" id="taste">
+				<select id="taste" name="taste" id="taste">
 					<option value="1">Dry</option>
 					<option value="2">Medium dry</option>
 					<option value="3">Medium Sweet</option>
 					<option value="4">Sweet</option>
 				</select>
 
-				<br>
 				<label for="style">Style: </label>
-				<select id="style" class="style" name="style">
+				<select id="style" name="style">
 					<option value="1">Red</option>
 					<option value="2">White</option>
 					<option value="3">Sparkling</option>
@@ -73,30 +78,29 @@
 					</optgroup>
 				</select>
 
-				<br>
 				<label for="variety">Grape variety: </label>
-				<input type="text" id="variety" name="variety" placeholder="Alphonse Lavallee">
+				<input type="text" id="variety" name="variety" list="variety_list" placeholder="Alphonse Lavallee">
+				<datalist id="variety_list">
+				</datalist>
 
 				<fieldset>
 					<legend>Year</legend>
 					<label for="wine_year">Year of the wine: </label>
 					<input type="number" min="1901" max="2155" id="wine_year" name="wine_year" placeholder="e.g. 1997">
 
-					<br>
 					<label for="wine_photo">Photo: </label>
 					<input type="file" id="wine_photo" name="wine_photo">
 
-					<fieldset>
+					<fieldset id="rating">
 						<legend>Rating</legend>
-						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="1">
-						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="2">
-						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="3">
-						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="4">
-						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="5">
+						<input checked type="radio" id="rating1" name="rating" onchange="rate.value=this.value" value="1">
+						<input type="radio" id="rating2" name="rating" onchange="rate.value=this.value" value="2">
+						<input type="radio" id="rating3" name="rating" onchange="rate.value=this.value" value="3">
+						<input type="radio" id="rating4" name="rating" onchange="rate.value=this.value" value="4">
+						<input type="radio" id="rating5" name="rating" onchange="rate.value=this.value" value="5">
 
-						<output name="rate" for="rating"></output>
+						<output name="rate" for="rating">1</output>
 					</fieldset>
-
 				</fieldset>
 			</fieldset>
 
@@ -104,11 +108,11 @@
 				<legend>Bottle</legend>
 
 				<label for="price">Price for a bottle</label>
-				<input id="price" type="number" name="price" placeholder="123..." min="0">
+				<input id="price" type="number" name="price" placeholder="399.99" min="0" step="0.01" max="1000000">
 
 				<br>
-				<label for="Volumes">Volume: </label>
-				<select id="Volumes"class="volumes_options" name="volumes_options">
+				<label for="volumes">Volume: </label>
+				<select id="volumes" name="volumes_options">
 					<option value="00.188">Split or Piccolo - 00.188 l</option>
 					<option value="00.375">Half or Demi - 00.375 l</option>
 					<option value="00.500">Half-liter or Jennie - 00.500 l</option>
@@ -130,7 +134,7 @@
 
 				<br>
 				<label for="friends">What friends was it from: </label>
-				<input id="friends" type="text" name="" placeholder="Name of a friend">
+				<input type="text" id="friends" name="friends" placeholder="Name of a friend">
 
 				<br>
 				<label for="scanned_code">Code for this bottle</label>
@@ -138,8 +142,8 @@
 
 				<br>
 				<label for="localization">Localization: </label>
-				<input id="localization" type="text" name="localization" placeholder="Lodz..." list="localization_list">
-				<datalist id="localization_list" class="localization_list">
+				<input id="localization" type="text" name="localization" placeholder="e.g. Lodz" list="localization_list">
+				<datalist id="localization_list">
 					<option value="Lodz">Lodz</option>
 				</datalist>
 
@@ -151,11 +155,11 @@
 
 					<br>
 					<label for="order_price">Price: </label>
-					<input type="number" id="order_price" name="order_price" placeholder="10000">
+					<input type="number" id="order_price" name="order_price" placeholder="399.99" min="0" step="0.01" max="1000000">
 
 					<br>
 					<label for="invoice_note">Note: </label>
-					<textarea id="invoice_note" name="invoice_note" rows="3" cols="60"></textarea>
+					<textarea id="invoice_note" name="invoice_note" rows="3" cols="40"></textarea>
 
 					<fieldset>
 						<legend>Supplier</legend>
@@ -182,7 +186,7 @@
 
 						<br>
 						<label for="supplier_note">Note: </label>
-						<textarea id="supplier_note" name="supplier_note" rows="3" cols="60"></textarea>
+						<textarea id="supplier_note" name="supplier_note" rows="3" cols="40"></textarea>
 					</fieldset>
 				</fieldset>
 			</fieldset>
