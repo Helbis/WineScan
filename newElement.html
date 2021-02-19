@@ -27,12 +27,167 @@
 		method="post"
 		accept-charset="utf-8"
 		autocomplete="on">
-			<h1>Bottle</h1>
-	        <label for="price">Test</label>
-	        <input id="price" type="text" name="price" placeholder="New">
-	        <input type="button" name="subBtn" onclick="hello('world')" value="Submit">
 
-			<h1>Wine</h1>
+			<fieldset>
+				<legend>Wine</legend>
+				<label for="wine_name">Name of the wine: </label>
+				<input type="text" id="wine_name" name="wine_name" placeholder="Rioja">
+
+				<br>
+				<label for="wine_description">Description for wine: </label>
+				<textarea id="wine_description" name="wine_description" rows="3" cols="40"></textarea>
+
+				<br>
+				<label for="taste">Taste: </label>
+				<select class="taste" name="taste" id="taste">
+					<option value="1">Dry</option>
+					<option value="2">Medium dry</option>
+					<option value="3">Medium Sweet</option>
+					<option value="4">Sweet</option>
+				</select>
+
+				<br>
+				<label for="style">Style: </label>
+				<select id="style" class="style" name="style">
+					<option value="1">Red</option>
+					<option value="2">White</option>
+					<option value="3">Sparkling</option>
+					<option value="4">Rosé</option>
+					<option value="5">Orange</option>
+					<optgroup label="Dessert">
+						<option value="6">Dessert</option>
+						<option value="7">Dessert/Fortified</option>
+						<option value="8">Dessert/Ice</option>
+						<option value="9">Dessert/Aromatized</option>
+						<option value="10">Dessert/Fruit</option>
+						<option value="11">Dessert/Noble rot</option>
+						<option value="12">Dessert/Straw</option>
+					</optgroup>
+					<optgroup label="Other">
+						<option value="13">Other</option>
+						<option value="14">Other/Table</option>
+						<option value="15">Other/Natural</option>
+						<option value="16">Other/Biodynamic</option>
+						<option value="17">Other/Organic</option>
+						<option value="18">Other/Kosher</option>
+					</optgroup>
+				</select>
+
+				<br>
+				<label for="variety">Grape variety: </label>
+				<input type="text" id="variety" name="variety" placeholder="Alphonse Lavallee">
+
+				<fieldset>
+					<legend>Year</legend>
+					<label for="wine_year">Year of the wine: </label>
+					<input type="number" min="1901" max="2155" id="wine_year" name="wine_year" placeholder="e.g. 1997">
+
+					<br>
+					<label for="wine_photo">Photo: </label>
+					<input type="file" id="wine_photo" name="wine_photo">
+
+					<fieldset>
+						<legend>Rating</legend>
+						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="1">
+						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="2">
+						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="3">
+						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="4">
+						<input type="radio" id="rating" name="rating" onchange="rate.value=this.value" value="5">
+
+						<output name="rate" for="rating"></output>
+					</fieldset>
+
+				</fieldset>
+			</fieldset>
+
+			<fieldset>
+				<legend>Bottle</legend>
+
+				<label for="price">Price for a bottle</label>
+				<input id="price" type="number" name="price" placeholder="123..." min="0">
+
+				<br>
+				<label for="Volumes">Volume: </label>
+				<select id="Volumes"class="volumes_options" name="volumes_options">
+					<option value="00.188">Split or Piccolo - 00.188 l</option>
+					<option value="00.375">Half or Demi - 00.375 l</option>
+					<option value="00.500">Half-liter or Jennie - 00.500 l</option>
+					<option value="00.750">Standard - 00.750 l</option>
+					<option value="01.000">Liter - 01.000 l</option>
+					<option value="01.500">Magnum - 01.500 l</option>
+					<option value="03.000">Jeroboam or Double Magnum - 03.000 l</option>
+					<option value="04.500">Rehoboam (Jeroboam in Bordeaux) - 04.500 l</option>
+					<option value="06.000">Methuselah or Imperial (Bordeaux) - 06.000 l</option>
+					<option value="09.000">Salmanazar - 09.000 l</option>
+					<option value="12.000">Balthazar - 12.000 l</option>
+					<option value="15.000">Nebuchadnezzar - 15.000 l</option>
+					<option value="18.000">Melchior - 18.000 l</option>
+					<option value="20.000">Solomon - 20.000 l</option>
+					<option value="26.000">Sovereign - 26.000 l</option>
+					<option value="27.000">Primat or Goliath - 27.000 l</option>
+					<option value="30.000">Melchizedek or Midas - 30.000 l</option>
+				</select>
+
+				<br>
+				<label for="friends">What friends was it from: </label>
+				<input id="friends" type="text" name="" placeholder="Name of a friend">
+
+				<br>
+				<label for="scanned_code">Code for this bottle</label>
+				<input type="number" id="scanned_code" name="scanned_code" placeholder="123">
+
+				<br>
+				<label for="localization">Localization: </label>
+				<input id="localization" type="text" name="localization" placeholder="Lodz..." list="localization_list">
+				<datalist id="localization_list" class="localization_list">
+					<option value="Lodz">Lodz</option>
+				</datalist>
+
+				<fieldset>
+					<legend>Invoice</legend>
+
+					<label for="order_number">Order number: </label>
+					<input type="text" id="order_number" name="order_number" placeholder="123456789">
+
+					<br>
+					<label for="order_price">Price: </label>
+					<input type="number" id="order_price" name="order_price" placeholder="10000">
+
+					<br>
+					<label for="invoice_note">Note: </label>
+					<textarea id="invoice_note" name="invoice_note" rows="3" cols="60"></textarea>
+
+					<fieldset>
+						<legend>Supplier</legend>
+						<label for="supplier_name">Name: </label>
+						<input type="text" id="supplier_name" name="supplier_name" placeholder="John Smith Inc.">
+
+						<br>
+						<label for="supplier_phone">Phone: </label>
+						<input
+						type="text"
+						id="supplier_phone"
+						name="supplier_phone"
+						placeholder="+48123456789"
+						pattern="\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$">
+
+						<br>
+						<label for="supplier_email">Email: </label>
+						<input
+						type="text"
+						id="supplier_email"
+						name="supplier_email"
+						placeholder="john.doe@mail.xyz"
+						pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
+
+						<br>
+						<label for="supplier_note">Note: </label>
+						<textarea id="supplier_note" name="supplier_note" rows="3" cols="60"></textarea>
+					</fieldset>
+				</fieldset>
+			</fieldset>
+
+			<input type="button" name="subBtn" onclick="hello('world')" value="Submit">
 	    </form>
 	</body>
 </html>
