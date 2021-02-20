@@ -38,13 +38,20 @@
 
 			<fieldset>
 				<legend>Wine</legend>
-				<label for="wine_name">Name: </label>
-				<input type="text" id="wine_name" name="wine_name" placeholder="Rioja">
+				<label for="wine_name">Name</label>
+				<input type="text" id="wine_name" name="wine_name" placeholder="Rioja" list="wine_name_list">
+				<datalist id="wine_name_list">
+				</datalist>
 
-				<label for="wine_description">Description: </label>
-				<textarea id="wine_description" name="wine_description" rows="3" cols="40"></textarea>
+				<label for="wine_description">Description</label>
+				<textarea
+				id="wine_description"
+				name="wine_description"
+				rows="3"
+				cols="40"
+				placeholder="This wine is delicious"></textarea>
 
-				<label for="taste">Taste: </label>
+				<label for="taste">Taste</label>
 				<select id="taste" name="taste" id="taste">
 					<option value="1">Dry</option>
 					<option value="2">Medium dry</option>
@@ -52,7 +59,7 @@
 					<option value="4">Sweet</option>
 				</select>
 
-				<label for="style">Style: </label>
+				<label for="style">Style</label>
 				<select id="style" name="style">
 					<option value="1">Red</option>
 					<option value="2">White</option>
@@ -78,17 +85,17 @@
 					</optgroup>
 				</select>
 
-				<label for="variety">Grape variety: </label>
+				<label for="variety">Grape variety</label>
 				<input type="text" id="variety" name="variety" list="variety_list" placeholder="Alphonse Lavallee">
 				<datalist id="variety_list">
 				</datalist>
 
 				<fieldset>
 					<legend>Year</legend>
-					<label for="wine_year">Year of the wine: </label>
+					<label for="wine_year">Year of the wine</label>
 					<input type="number" min="1901" max="2155" id="wine_year" name="wine_year" placeholder="e.g. 1997">
 
-					<label for="wine_photo">Photo: </label>
+					<label for="wine_photo">Photo</label>
 					<input type="file" id="wine_photo" name="wine_photo">
 
 					<fieldset id="rating">
@@ -110,8 +117,7 @@
 				<label for="price">Price for a bottle</label>
 				<input id="price" type="number" name="price" placeholder="399.99" min="0" step="0.01" max="1000000">
 
-				<br>
-				<label for="volumes">Volume: </label>
+				<label for="volumes">Volume</label>
 				<select id="volumes" name="volumes_options">
 					<option value="00.188">Split or Piccolo - 00.188 l</option>
 					<option value="00.375">Half or Demi - 00.375 l</option>
@@ -132,42 +138,35 @@
 					<option value="30.000">Melchizedek or Midas - 30.000 l</option>
 				</select>
 
-				<br>
-				<label for="friends">What friends was it from: </label>
+				<label for="friends">What friends was it from</label>
 				<input type="text" id="friends" name="friends" placeholder="Name of a friend">
 
-				<br>
 				<label for="scanned_code">Code for this bottle</label>
-				<input type="number" id="scanned_code" name="scanned_code" placeholder="123">
+				<input type="number" id="scanned_code" name="scanned_code" placeholder="123456789">
 
-				<br>
-				<label for="localization">Localization: </label>
+				<label for="localization">Localization</label>
 				<input id="localization" type="text" name="localization" placeholder="e.g. Lodz" list="localization_list">
 				<datalist id="localization_list">
-					<option value="Lodz">Lodz</option>
 				</datalist>
 
 				<fieldset>
 					<legend>Invoice</legend>
 
-					<label for="order_number">Order number: </label>
+					<label for="order_number">Order number</label>
 					<input type="text" id="order_number" name="order_number" placeholder="123456789">
 
-					<br>
-					<label for="order_price">Price: </label>
+					<label for="order_price">Price</label>
 					<input type="number" id="order_price" name="order_price" placeholder="399.99" min="0" step="0.01" max="1000000">
 
-					<br>
-					<label for="invoice_note">Note: </label>
-					<textarea id="invoice_note" name="invoice_note" rows="3" cols="40"></textarea>
+					<label for="invoice_note">Note</label>
+					<textarea id="invoice_note" name="invoice_note" rows="3" cols="40" placeholder="It wasn't expensive"></textarea>
 
 					<fieldset>
 						<legend>Supplier</legend>
-						<label for="supplier_name">Name: </label>
+						<label for="supplier_name">Name</label>
 						<input type="text" id="supplier_name" name="supplier_name" placeholder="John Smith Inc.">
 
-						<br>
-						<label for="supplier_phone">Phone: </label>
+						<label for="supplier_phone">Phone</label>
 						<input
 						type="text"
 						id="supplier_phone"
@@ -175,8 +174,7 @@
 						placeholder="+48123456789"
 						pattern="\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$">
 
-						<br>
-						<label for="supplier_email">Email: </label>
+						<label for="supplier_email">Email</label>
 						<input
 						type="text"
 						id="supplier_email"
@@ -184,9 +182,8 @@
 						placeholder="john.doe@mail.xyz"
 						pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
 
-						<br>
-						<label for="supplier_note">Note: </label>
-						<textarea id="supplier_note" name="supplier_note" rows="3" cols="40"></textarea>
+						<label for="supplier_note">Note</label>
+						<textarea id="supplier_note" name="supplier_note" rows="3" cols="40" placeholder="This supplier is amazing"></textarea>
 					</fieldset>
 				</fieldset>
 			</fieldset>
