@@ -34,7 +34,7 @@
 
         <nav id="topBar">
             <form class="searchForm" action="./src.js/functions.js" method="post" accept-charset="utf-8">
-                <label></label>
+                <label for="searchBar"></label>
                 <input id="searchBar" type="text" placeholder="Search..." maxlength="47">
             </form>
 
@@ -88,6 +88,21 @@
                     <p class="creationDate">dd-mm-yy</p>
                     <p class="num_of_bottles">Bottles : 842</p>
                 </div>
+
+                <form class="deletionForm" method="post">
+                    <label for="scanned_code">Enter the code</label>
+                    <input
+                    type="number"
+                    id="scanned_code"
+                    name="scanned_code"
+                    placeholder="123456789"
+                    list="scanned_code_list"
+                    step="1">
+                    <datalist id="scanned_code_list">
+                    </datalist>
+
+                    <button id="removeBtn" type="button" name="button">Remove</button>
+                </form>
 
                 <button type="button" name="exit" onclick="closeDetails()" class="details-exit">
                     &times;
