@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>Wine Scan - Add new element</title>
+
+	    <!-- META -->
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="text/html; width=device-width, initial-scale=1.0">
+
+	    <!-- FAVICON -->
+	    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/pngIcons/apple-touch-icon.png">
+	    <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/pngIcons/favicon-32x32.png">
+	    <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/pngIcons/favicon-16x16.png">
+	    <link rel="manifest" href="./src/assets/pngIcons/site.webmanifest">
+
+		<!-- STYLE -->
+		<link rel="stylesheet" href="./src/css/newElement/index.css">
+
+		<!-- SCRIPTS -->
+		<script defer src="./src/js/formAction.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<nav>
+	        <a href="./index.html" target="_top" rel="prev">
+	            <img src="./src/assets/pngIcons/favicon-32x32.png" alt="Go back">
+	        </a>
+
+			<h1>Add new element</h1>
+	    </nav>
+
+
+		<form
+		id="bottle_form"
+		action=""
+		method="post"
+		accept-charset="utf-8"
+		autocomplete="on">
+
+			<fieldset>
+				<legend>Wine</legend>
+				<label for="wine_name">Name</label>
+				<input type="text" id="wine_name" name="wine_name" placeholder="Rioja" list="wine_name_list">
+				<datalist id="wine_name_list">
+				</datalist>
+
+				<label for="wine_description">Description</label>
+				<textarea
+				id="wine_description"
+				name="wine_description"
+				rows="3"
+				cols="40"
+				placeholder="This wine is delicious"></textarea>
+
+				<label for="taste">Taste</label>
+				<select id="taste" name="taste" id="taste">
+					<option value="1">Dry</option>
+					<option value="2">Medium dry</option>
+					<option value="3">Medium Sweet</option>
+					<option value="4">Sweet</option>
+				</select>
+
+				<label for="style">Style</label>
+				<select id="style" name="style">
+					<option value="1">Red</option>
+					<option value="2">White</option>
+					<option value="3">Sparkling</option>
+					<option value="4">Rosé</option>
+					<option value="5">Orange</option>
+					<optgroup label="Dessert">
+						<option value="6">Dessert</option>
+						<option value="7">Dessert/Fortified</option>
+						<option value="8">Dessert/Ice</option>
+						<option value="9">Dessert/Aromatized</option>
+						<option value="10">Dessert/Fruit</option>
+						<option value="11">Dessert/Noble rot</option>
+						<option value="12">Dessert/Straw</option>
+					</optgroup>
+					<optgroup label="Other">
+						<option value="13">Other</option>
+						<option value="14">Other/Table</option>
+						<option value="15">Other/Natural</option>
+						<option value="16">Other/Biodynamic</option>
+						<option value="17">Other/Organic</option>
+						<option value="18">Other/Kosher</option>
+					</optgroup>
+				</select>
+
+				<label for="variety">Grape variety</label>
+				<input type="text" id="variety" name="variety" list="variety_list" placeholder="Alphonse Lavallee">
+				<datalist id="variety_list">
+				</datalist>
+
+				<fieldset>
+					<legend>Year</legend>
+					<label for="wine_year">Year of the wine</label>
+					<input type="number" min="1901" max="2155" id="wine_year" name="wine_year" placeholder="e.g. 1997">
+
+					<label for="wine_photo">Photo</label>
+					<input type="file" id="wine_photo" name="wine_photo">
+
+					<fieldset id="rating">
+						<legend>Rating</legend>
+						<input checked type="radio" id="rating1" name="rating" onchange="rate.value=this.value" value="1">
+						<input type="radio" id="rating2" name="rating" onchange="rate.value=this.value" value="2">
+						<input type="radio" id="rating3" name="rating" onchange="rate.value=this.value" value="3">
+						<input type="radio" id="rating4" name="rating" onchange="rate.value=this.value" value="4">
+						<input type="radio" id="rating5" name="rating" onchange="rate.value=this.value" value="5">
+
+						<output name="rate" for="rating">1</output>
+					</fieldset>
+				</fieldset>
+			</fieldset>
+
+			<fieldset>
+				<legend>Bottle</legend>
+
+				<label for="amount">Amount to create</label>
+				<input id="amount" type="number" name="amount" placeholder="0" min="0" step="1" max="1000">
+
+				<label for="price">Price for a bottle</label>
+				<input id="price" type="number" name="price" placeholder="399.99" min="0" step="0.01" max="1000000">
+
+				<label for="volumes">Volume</label>
+				<select id="volumes" name="volumes_options">
+					<option value="00.188">Split or Piccolo - 00.188 l</option>
+					<option value="00.375">Half or Demi - 00.375 l</option>
+					<option value="00.500">Half-liter or Jennie - 00.500 l</option>
+					<option value="00.750">Standard - 00.750 l</option>
+					<option value="01.000">Liter - 01.000 l</option>
+					<option value="01.500">Magnum - 01.500 l</option>
+					<option value="03.000">Jeroboam or Double Magnum - 03.000 l</option>
+					<option value="04.500">Rehoboam (Jeroboam in Bordeaux) - 04.500 l</option>
+					<option value="06.000">Methuselah or Imperial (Bordeaux) - 06.000 l</option>
+					<option value="09.000">Salmanazar - 09.000 l</option>
+					<option value="12.000">Balthazar - 12.000 l</option>
+					<option value="15.000">Nebuchadnezzar - 15.000 l</option>
+					<option value="18.000">Melchior - 18.000 l</option>
+					<option value="20.000">Solomon - 20.000 l</option>
+					<option value="26.000">Sovereign - 26.000 l</option>
+					<option value="27.000">Primat or Goliath - 27.000 l</option>
+					<option value="30.000">Melchizedek or Midas - 30.000 l</option>
+				</select>
+
+				<label for="friends">What friends was it from</label>
+				<input type="text" id="friends" name="friends" placeholder="Name of a friend">
+
+				<label for="scanned_code">Code for this bottle</label>
+				<input type="number" id="scanned_code" name="scanned_code" placeholder="123456789">
+
+				<label for="localization">Localization</label>
+				<input id="localization" type="text" name="localization" placeholder="e.g. Lodz" list="localization_list">
+				<datalist id="localization_list">
+				</datalist>
+
+				<fieldset>
+					<legend>Invoice</legend>
+
+					<label for="order_number">Order number</label>
+					<input type="text" id="order_number" name="order_number" placeholder="123456789">
+
+					<label for="order_price">Price</label>
+					<input type="number" id="order_price" name="order_price" placeholder="399.99" min="0" step="0.01" max="1000000">
+
+					<label for="invoice_note">Note</label>
+					<textarea id="invoice_note" name="invoice_note" rows="3" cols="40" placeholder="It wasn't expensive"></textarea>
+
+					<fieldset>
+						<legend>Supplier</legend>
+						<label for="supplier_name">Name</label>
+						<input type="text" id="supplier_name" name="supplier_name" placeholder="John Smith Inc.">
+
+						<label for="supplier_phone">Phone</label>
+						<input
+						type="text"
+						id="supplier_phone"
+						name="supplier_phone"
+						placeholder="+48123456789"
+						pattern="\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$">
+
+						<label for="supplier_email">Email</label>
+						<input
+						type="text"
+						id="supplier_email"
+						name="supplier_email"
+						placeholder="john.doe@mail.xyz"
+						pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
+
+						<label for="supplier_note">Note</label>
+						<textarea id="supplier_note" name="supplier_note" rows="3" cols="40" placeholder="This supplier is amazing"></textarea>
+					</fieldset>
+				</fieldset>
+			</fieldset>
+
+			<input type="button" name="subBtn" onclick="hello('world')" value="Submit">
+	    </form>
+	</body>
+</html>
