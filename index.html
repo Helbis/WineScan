@@ -7,6 +7,7 @@
     <!-- META -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="wine scan winescan">
 
     <!-- FAVICON -->
     <!-- TODO: Make svg favicons work -->
@@ -52,10 +53,26 @@
             <a href="#">Contact</a>
         </div>
 
-        <div id="topBar">
-            <input id="searchBar" type="text" placeholder="Search...">
-            <button id="moreBtn" type="button" name="sideNavBtn" onclick="openNav()">&plus;</button>
-        </div>
+        <nav id="topBar">
+            <form class="searchForm" action="./src.js/functions.js" method="post" accept-charset="utf-8">
+                <label for="searchBar"></label>
+                <input id="searchBar" type="text" placeholder="Search..." maxlength="47">
+            </form>
+
+            <a rel="external" target="_blank" href="https://github.com/Helbis/WineScan">
+                <img src="./public/icons/github/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo">
+            </a>
+            <a rel="nofollow" href="mailto:filiphelbig97@gmail.com?subject=WineScan">
+                <p>
+                    @
+                </p>
+            </a>
+            <a rel="next" href="./newElement.html" alt="Add new element">
+                <p>
+                    +
+                </p>
+            </a>
+        </nav>
 
         <div class="collectionsView">
             <template id="temp_card">
@@ -63,9 +80,9 @@
                     <img class="left_of_card" src="./public/images/blanc_big_474x774.jpg" alt="wine" loading="lazy">
 
                     <div class="middle_of_card">
-                        <p class="wine_name">name</p>
-                        <p class="wine_year">year</p>
-                        <p class="wine_style">style</p>
+                        <p class="wine_name">Name of the wine</p>
+                        <p class="wine_year">1997</p>
+                        <p class="wine_style">Red</p>
                     </div>
 
                     <div class="right_of_card">
@@ -76,24 +93,40 @@
                     </div>
                 </div>
             </template>
-            <script src="./public/javascripts/iife.js" charset="utf-8"></script>
-        </div>
 
-        <button id="upButton" type="button" name="upButton" onclick="scrollUp()">&#11165;</button>
+            <script src="./public/javascripts/iife.js" charset="utf-8"></script>
+
+            <script src="./main.js" type="text/javascript" defer charset="utf-8"></script>
+
+        </div>
 
         <article class="detailsView inactive">
             <header class="details-top">
                 <img class="left_of_card" src="./public/images/blanc_big_474x774.jpg" alt="wine" loading="lazy">
 
-                <div class="middle_of_card basicInfo">
+                <div class="basicInfo">
                     <p class="wine_name">name</p>
                     <p class="wine_year">year</p>
                     <p class="wine_style">style</p>
+
+                    <p class="creationDate">dd-mm-yy</p>
+                    <p class="num_of_bottles">Bottles : 842</p>
                 </div>
 
-                <div class="creationDate">
-                    <p>Created on <br> {{ creationDate }}</p>
-                </div>
+                <form class="deletionForm" method="post">
+                    <label for="scanned_code">Enter the code</label>
+                    <input
+                    type="number"
+                    id="scanned_code"
+                    name="scanned_code"
+                    placeholder="123456789"
+                    list="scanned_code_list"
+                    step="1">
+                    <datalist id="scanned_code_list">
+                    </datalist>
+
+                    <button id="removeBtn" type="button" name="button">Remove</button>
+                </form>
 
                 <button type="button" name="exit" onclick="closeDetails()" class="details-exit">
                     &times;
@@ -103,31 +136,29 @@
 
             <main class="details-main">
                 <section class="description">
-                    <p class="sectionTitle">
+                    <h1 class="sectionTitle">
                         Description
-                    </p>
+                    </h1>
 
-                    <button type="button" name="button" class="foldingBtn" id="moreDesc" onclick="changeFoldState('moreDesc')"> &#129155;
-                    </button>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
                 </section>
-                <hr>
 
                 <section class="invoices">
-                    <p class="sectionTitle">
+                    <h1 class="sectionTitle">
                         Invoices
+                    </h1>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
-
-                    <button type="button" name="button" class="foldingBtn" id="moreInv" onclick="changeFoldState('moreInv')" onload="alert('moreInv')"> &#129155;
-                    </button>
                 </section>
-                <hr>
             </main>
-
-            <footer>
-                <p class="num_of_bottles">Bottles : 842</p>
-            </footer>
         </article>
+
+        <button id="upButton" type="button" name="upButton" onclick="scrollUp()">TOP</button>
     </div>
 </body>
-
 </html>

@@ -3,6 +3,8 @@
     top: 50%;
     left: 50%;
 
+    z-index: 2;
+
     margin: 0;
     padding: 0;
 
@@ -10,12 +12,15 @@
     font-size: 2rem;
 
     box-shadow: slategrey 8px 8px 8px;
-    outline: lightslategrey solid 1px;
+    border: darkslategrey solid 1px;
 
-    width: 50%;
-    min-width: 200px;
-    max-width: 600px;
+    min-width: 400px;
+    width: 80%;
+    max-width: 42rem;
     min-height: 50%;
+    max-height: 90vh;
+
+    transition: 0.3s ease-in-out;
 }
 .detailsView.active{
     transform: translate(-50%, -50%) scale(1);
@@ -26,6 +31,12 @@
 
 /* top / header part of the view */
 .details-top{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    background: whitesmoke;
+
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -40,47 +51,99 @@
 }
 
 .basicInfo{
-    margin-top: auto;
-    margin-bottom: auto;
+    width: 50%;
 }
 
-.creationDate{
-    margin-top: auto;
-    margin-bottom: auto;
+.deletionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    margin: auto 0;
+    
+    max-width: 10rem;
+    height: 100%;
+}
+.deletionForm > * {
+    margin: auto;
+    width: 80%;
+}
+.deletionForm > label {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.deletionForm > input {
+    padding: 0.5rem;
+    
+    width: 8rem;
+    height: 2rem;
+    background: var(--color-accent);
+    
+    color: whitesmoke;
+    font-size: 1rem;
+    font-weight: bold;
+    
+    border-style: none;
+    border-radius: var(--border-radius, 5px);
+}
+label::placeholder {
+    color: rgba(250, 250, 250, 0.9);
 }
 
+#removeBtn {
+    background: lightgrey;
+
+    width: 10ch;
+    height: 4ch;
+
+    border-style: none;
+    border-radius: var(--border-radius, 5px);
+}
+#removeBtn:active,
+#removeBtn:hover {
+    background: var(--color-accent, red);
+}
+
+/* Exit button */
 .details-exit{
+    height: 3rem;
+    width: 3rem;
+
     background: none;
     border: none;
     font-size: 2rem;
 
     color: black;
 
-    margin-top: 0;
+    padding: 0;
+    margin: 0;
 }
 .details-exit:hover,
 .details-exit:active{
-
     color: red;
 }
 
 hr.afterTop{
     width: 80%;
-    color: lightgrey;
-}
-
-/* Main part of the view */
-.details-main{
-    display: flex;
-    flex-direction: column;
-}
-
-.details-main > hr{
-    width: 90%;
     color: darkslategrey;
 }
 
-.details-main > .description, .invoices{
+/* Main part of the view */
+.details-main,
+.description,
+.invoices {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.details-main > hr{
+    width: 60%;
+    color: lightgrey;
+}
+
+.description > h1,
+.invoices > h1{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -89,31 +152,45 @@ hr.afterTop{
 
     padding: 1rem;
     margin: 0;
+
+    font-weight: normal;
+    font-size: 1.5rem;
 }
 
-p.sectionTitle{
-    margin: 0;
-    padding: 0;
+.description > p,
+.invoices > p {
+    display: block;
+
+    max-width: 64ch;
+    max-height: 16ch;
+
+    overflow-y: scroll;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+
+    text-align: left;
+    font-size: 1rem;
+
+    outline: var(--color-accent, red) solid 1px;
 }
 
-button.foldingBtn{
-    background: dodgerblue;
+/* Folding button for extra text */
+.foldingBtn{
+    background: var(--color-main, red);
     color: black;
 
-    /* font-size: 1.5rem; */
+    font-family: sans-serif;
     font-weight: bold;
 
-    border-radius: 5px;
+    border-radius: var(--border-radius, 5px);
     border-style: none;
-
-    /* Center vertically */
-    margin-top: auto;
-    margin-bottom: auto;
 
     width: 9ch;
     height: 4ch;
 }
-button.foldingBtn:active,
-button.foldingBtn:hover{
-    background: deepskyblue;
+.foldingBtn:active,
+.foldingBtn:hover{
+    background: var(--color-accent, orange);
 }

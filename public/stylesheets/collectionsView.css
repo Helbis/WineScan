@@ -1,5 +1,5 @@
 .collectionsView{
-    max-width: 1000px;
+    max-width: var(--max-width-of-app, 1000px);
     height: 100%;
 
     display: flex;
@@ -10,5 +10,5 @@
     margin-left: auto;
     margin-right: auto;
 
-    padding-top: 5rem;
+    padding-top: 2rem;
 }

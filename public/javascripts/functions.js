@@ -23,30 +23,6 @@ function closeDetails() {
     });
 }
 
-// Side panel
-function openNav() {
-    document.getElementById("mySidenav").style.width = "300px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-
-// Website for symbols
-// https://www.htmlsymbols.xyz/search?q=dot
-function changeFoldState(id) {
-    const upArrow = "\uD83E\uDC81";
-    const downArrow = "\uD83E\uDC83";
-
-    const elm = document.getElementById(id);
-
-    if (elm.innerText == upArrow) {
-        elm.innerText = downArrow;
-    } else if (elm.innerText == downArrow) {
-        elm.innerText = upArrow;
-    }
-}
-
 function scrollUp() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -58,10 +34,10 @@ window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("searchBar").style.top = "0";
-        document.getElementById("moreBtn").style.top = "0";
+        // document.getElementById("moreBtn").style.top = "0";
     } else {
         document.getElementById("searchBar").style.top = "-100px";
-        document.getElementById("moreBtn").style.top = "-100px";
+        // document.getElementById("moreBtn").style.top = "-100px";
     }
     prevScrollpos = currentScrollPos;
 
@@ -71,4 +47,13 @@ window.onscroll = () => {
     } else {
         document.getElementById("upButton").style.display = "none";
     }
+
+    closeDetails();
+}
+
+
+function hello(str) {
+    let a = document.getElementById('test');
+    console.log(a);
+    // console.log(`hello ${str}`);
 }
