@@ -1,0 +1,34 @@
+:root{
+    /* Colors */
+    --color-main: indianred;
+    --color-accent: lightcoral;
+
+    /* Corners and sizes */
+    --border-radius: 5px;
+    --max-width-of-app: 1200px;
+    --max-width-of-card: calc(--max-width-of-app / 6);
+
+    /* Fonts */
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+body{
+    background: var(--color-main, green);
+
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    text-align: center;
+
+    margin: 0 0 2rem;
+    padding: 0;
+}
+
+button{
+    cursor: pointer;
+
+    font-style: normal;
+}
