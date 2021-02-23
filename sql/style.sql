@@ -1,0 +1,18 @@
+INSERT INTO Style(id, name) VALUES(1, "Red");
+INSERT INTO Style(id, name) VALUES(2, "White");
+INSERT INTO Style(id, name) VALUES(3, "Sparkling");
+INSERT INTO Style(id, name) VALUES(4, "Rosé");
+INSERT INTO Style(id, name) VALUES(5, "Orange");
+INSERT INTO Style(id, name) VALUES(6, "Dessert");
+INSERT INTO Style(id, name) VALUES(7, "Dessert/Fortified");
+INSERT INTO Style(id, name) VALUES(8, "Dessert/Ice");
+INSERT INTO Style(id, name) VALUES(9, "Dessert/Aromatized");
+INSERT INTO Style(id, name) VALUES(10, "Dessert/Fruit");
+INSERT INTO Style(id, name) VALUES(11, "Dessert/Noble rot");
+INSERT INTO Style(id, name) VALUES(12, "Dessert/Straw");
+INSERT INTO Style(id, name) VALUES(13, "Other");
+INSERT INTO Style(id, name) VALUES(14, "Other/Table");
+INSERT INTO Style(id, name) VALUES(15, "Other/Natural");
+INSERT INTO Style(id, name) VALUES(16, "Other/Biodynamic");
+INSERT INTO Style(id, name) VALUES(17, "Other/Organic");
+INSERT INTO Style(id, name) VALUES(18, "Other/Kosher");

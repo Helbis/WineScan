@@ -1,0 +1,17 @@
+INSERT INTO Volumes(id, name, volume) VALUES(1, "Split or Piccolo", 00.188);
+INSERT INTO Volumes(id, name, volume) VALUES(2, "Half or Demi", 00.375);
+INSERT INTO Volumes(id, name, volume) VALUES(3, "Half-liter or Jennie", 00.500);
+INSERT INTO Volumes(id, name, volume) VALUES(4, "Standard", 00.750);
+INSERT INTO Volumes(id, name, volume) VALUES(5, "Liter", 01.000);
+INSERT INTO Volumes(id, name, volume) VALUES(6, "Magnum", 01.500);
+INSERT INTO Volumes(id, name, volume) VALUES(7, "Jeroboam or Double Magnum", 03.000);
+INSERT INTO Volumes(id, name, volume) VALUES(8, "Rehoboam (Jeroboam in Bordeaux)", 04.500);
+INSERT INTO Volumes(id, name, volume) VALUES(9, "Methuselah or Imperial (Bordeaux)", 06.000);
+INSERT INTO Volumes(id, name, volume) VALUES(10, "Salmanazar", 09.000);
+INSERT INTO Volumes(id, name, volume) VALUES(11, "Balthazar", 12.000);
+INSERT INTO Volumes(id, name, volume) VALUES(12, "Nebuchadnezzar", 15.000);
+INSERT INTO Volumes(id, name, volume) VALUES(13, "Melchior", 18.000);
+INSERT INTO Volumes(id, name, volume) VALUES(14, "Solomon", 20.000);
+INSERT INTO Volumes(id, name, volume) VALUES(15, "Sovereign", 26.000);
+INSERT INTO Volumes(id, name, volume) VALUES(16, "Primat or Goliath", 27.000);
+INSERT INTO Volumes(id, name, volume) VALUES(17, "Melchizedek or Midas", 30.000);

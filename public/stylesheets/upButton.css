@@ -1,0 +1,32 @@
+#upButton{
+    position: fixed;
+
+    /* POSITION */
+    bottom: 1rem;
+    right: 1rem;
+
+    /* SIZE */
+    width: 4.5rem;
+    height: 4.5rem;
+
+    /* ROUNDING CORNERS */
+    border-radius: 50%;
+    border: none;
+
+    background: darkgrey;
+
+    font-size: 3rem;
+
+    padding: 0;
+    margin: 0;
+
+    z-index: 20;
+}
+
+#upButton:active,
+#upButton:hover{
+    background: lightgrey;
+
+    border: darkgrey solid 1px;
+    box-shadow: 4px 4px 8px black;
+}

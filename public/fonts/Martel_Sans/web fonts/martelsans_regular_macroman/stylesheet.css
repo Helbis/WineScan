@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'martel_sansregular';
+    src: url('martelsans-regular-webfont.eot');
+    src: url('martelsans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('martelsans-regular-webfont.woff2') format('woff2'),
+         url('martelsans-regular-webfont.woff') format('woff'),
+         url('martelsans-regular-webfont.ttf') format('truetype'),
+         url('martelsans-regular-webfont.svg#martel_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+

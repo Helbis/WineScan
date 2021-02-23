@@ -1,0 +1,58 @@
+.card{
+    flex-basis: 300px;
+    flex-grow: 0.2;
+    flex-shrink: 1;
+
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    display: flex;
+    flex-direction: row;
+
+    background: whitesmoke;
+    outline: lightslategrey solid 1px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Left part of the card */
+.left_of_card{
+    width: 100px;
+    height: 100px;
+
+    margin: 1rem;
+    padding: 0;
+
+    display: flex;
+    align-self: center;
+
+    outline: whitesmoke solid 2px;
+    outline-offset: -5px;
+}
+
+
+/* Middle part of the card */
+.middle_of_card{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+}
+
+/* Right part of the card */
+.right_of_card{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0.5rem;
+}

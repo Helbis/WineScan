@@ -1,0 +1,65 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+
+    padding-top: 60px;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    z-index: 1;
+
+    background-color: #111;
+
+    overflow-x: hidden;
+
+    transition: 0.5s;
+}
+
+.sidenav a {
+    display: block;
+
+    padding: 8px 8px 8px 32px;
+
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: grey;
+
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: whitesmoke;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+
+    margin-left: 50px;
+
+    font-size: 36px;
+}
+
+.closebtn{
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: auto;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: auto;
+
+    font-size: 2rem;
+    background: none;
+    border: none;
+
+    transition: top 0.5s;
+}
+.closebtn:active,
+.closebtn:hover{
+    color: floralwhite;
+}

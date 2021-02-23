@@ -1,0 +1,17 @@
+body{
+    background: cadetblue;
+
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    cursor: pointer;
+}

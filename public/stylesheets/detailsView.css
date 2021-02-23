@@ -1,0 +1,119 @@
+.detailsView{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    margin: 0;
+    padding: 0;
+
+    background: whitesmoke;
+    font-size: 2rem;
+
+    box-shadow: slategrey 8px 8px 8px;
+    outline: lightslategrey solid 1px;
+
+    width: 50%;
+    min-width: 200px;
+    max-width: 600px;
+    min-height: 50%;
+}
+.detailsView.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.detailsView.inactive{
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* top / header part of the view */
+.details-top{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    /* FONT */
+    font-size: 1rem;
+}
+.details-top > img{
+    width: 150px;
+    height: 150px;
+}
+
+.basicInfo{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.creationDate{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.details-exit{
+    background: none;
+    border: none;
+    font-size: 2rem;
+
+    color: black;
+
+    margin-top: 0;
+}
+.details-exit:hover,
+.details-exit:active{
+
+    color: red;
+}
+
+hr.afterTop{
+    width: 80%;
+    color: lightgrey;
+}
+
+/* Main part of the view */
+.details-main{
+    display: flex;
+    flex-direction: column;
+}
+
+.details-main > hr{
+    width: 90%;
+    color: darkslategrey;
+}
+
+.details-main > .description, .invoices{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    padding: 1rem;
+    margin: 0;
+}
+
+p.sectionTitle{
+    margin: 0;
+    padding: 0;
+}
+
+button.foldingBtn{
+    background: dodgerblue;
+    color: black;
+
+    /* font-size: 1.5rem; */
+    font-weight: bold;
+
+    border-radius: 5px;
+    border-style: none;
+
+    /* Center vertically */
+    margin-top: auto;
+    margin-bottom: auto;
+
+    width: 9ch;
+    height: 4ch;
+}
+button.foldingBtn:active,
+button.foldingBtn:hover{
+    background: deepskyblue;
+}

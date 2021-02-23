@@ -1,37 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Wine Scan</title>
 
-        <!-- META -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Wine Scan</title>
 
-        <!-- FAVICON -->
-        <!-- TODO: Make svg favicons work -->
-        <link rel="icon" href="./src/assets/icon.svg" />
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- CSS -->
-        <!-- TODO: Make division for different sizes of the screen -->
-        <link rel="stylesheet" href="./src/css/index.css">
-        <link rel="stylesheet" href="./src/css/collectionsView.css">
-        <link rel="stylesheet" href="./src/css/searchBar.css">
-        <link rel="stylesheet" href="./src/css/card.css">
-        <link rel="stylesheet" href="./src/css/detailsView.css">
-        <link rel="stylesheet" href="./src/css/upButton.css">
+    <!-- FAVICON -->
+    <!-- TODO: Make svg favicons work -->
+    <!-- <link rel="icon" href="./public/assets/icon.svg" /> -->
 
-        <!-- NOTE: Here goes big screen CSS -->
+    <!-- CSS -->
+    <!-- TODO: Make division for different sizes of the screen -->
+    <link rel="stylesheet" href="./public/stylesheets/index.css">
+    <link rel="stylesheet" href="./public/stylesheets/collectionsView.css">
+    <link rel="stylesheet" href="./public/stylesheets/searchBar.css">
+    <link rel="stylesheet" href="./public/stylesheets/card.css">
+    <link rel="stylesheet" href="./public/stylesheets/detailsView.css">
+    <link rel="stylesheet" href="./public/stylesheets/upButton.css">
+    <link rel="stylesheet" href="./public/stylesheets/sideNav.css">
 
-        <!-- TODO: Test non Vite support of VUE.JS (via CDN) -->
-        <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <!-- JavaScript -->
+    <script src="./public/javascripts/functions.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2/dist/quagga.min.js"></script>
+    <!-- TODO: Set the font faces -->
+    <!-- FROM: https://www.fontsquirrel.com -->
+    <!-- HOW TO SET UP: https://www.youtube.com/watch?v=KzqQXDbDvus -->
 
-        <!-- TODO: Remember to preset font sizes and faces -->
+    <!-- OTHER STUFF -->
+    <base href=".">
+</head>
 
-        <!-- OTHER STUFF -->
-        <base href=".">
-    </head>
-    <body>
-        <div id="app"></div>
-        <script defer type="module" src="./main.js"></script>
-    </body>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        const socket = io();
+
+        socket.on('back2front', (msg) => {
+            console.table(msg);
+        });
+    </script>
+
+    <div id="app">
+        <div id="mySidenav" class="sidenav">
+            <button class="closebtn" onclick="closeNav()">&times;</button>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div id="topBar">
+            <input id="searchBar" type="text" placeholder="Search...">
+            <button id="moreBtn" type="button" name="sideNavBtn" onclick="openNav()">&plus;</button>
+        </div>
+
+        <div class="collectionsView">
+            <template id="temp_card">
+                <div class="card">
+                    <img class="left_of_card" src="./public/images/blanc_big_474x774.jpg" alt="wine" loading="lazy">
+
+                    <div class="middle_of_card">
+                        <p class="wine_name">name</p>
+                        <p class="wine_year">year</p>
+                        <p class="wine_style">style</p>
+                    </div>
+
+                    <div class="right_of_card">
+                        <button type="button" name="detailed_view" onclick="activateDetails()">
+                            More
+                        </button>
+                        <p class="num_of_bottles">842</p>
+                    </div>
+                </div>
+            </template>
+            <script src="./public/javascripts/iife.js" charset="utf-8"></script>
+        </div>
+
+        <button id="upButton" type="button" name="upButton" onclick="scrollUp()">&#11165;</button>
+
+        <article class="detailsView inactive">
+            <header class="details-top">
+                <img class="left_of_card" src="./public/images/blanc_big_474x774.jpg" alt="wine" loading="lazy">
+
+                <div class="middle_of_card basicInfo">
+                    <p class="wine_name">name</p>
+                    <p class="wine_year">year</p>
+                    <p class="wine_style">style</p>
+                </div>
+
+                <div class="creationDate">
+                    <p>Created on <br> {{ creationDate }}</p>
+                </div>
+
+                <button type="button" name="exit" onclick="closeDetails()" class="details-exit">
+                    &times;
+                </button>
+            </header>
+            <hr class="afterTop">
+
+            <main class="details-main">
+                <section class="description">
+                    <p class="sectionTitle">
+                        Description
+                    </p>
+
+                    <button type="button" name="button" class="foldingBtn" id="moreDesc" onclick="changeFoldState('moreDesc')"> &#129155;
+                    </button>
+                </section>
+                <hr>
+
+                <section class="invoices">
+                    <p class="sectionTitle">
+                        Invoices
+                    </p>
+
+                    <button type="button" name="button" class="foldingBtn" id="moreInv" onclick="changeFoldState('moreInv')" onload="alert('moreInv')"> &#129155;
+                    </button>
+                </section>
+                <hr>
+            </main>
+
+            <footer>
+                <p class="num_of_bottles">Bottles : 842</p>
+            </footer>
+        </article>
+    </div>
+</body>
+
 </html>
