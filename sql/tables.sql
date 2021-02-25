@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS Wine (
 CREATE TABLE IF NOT EXISTS Wine_year (
     `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `bottling_year` YEAR NOT NULL,
-    `rating` INT,
+    `rating` INT UNSIGNED,
     `photo` VARCHAR(300),
     `id_wine` INT NOT NULL,
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS Invoice (
     `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `creation_date` DATE NOT NULL,
     `order_number` VARCHAR(20),
-    `total_price` INT,
+    `total_price` INT UNSIGNED,
     `note` VARCHAR(500),
     `id_supplier` INT NOT NULL,
 
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS Bottle (
     `friends` VARCHAR(200),
     `creation_date` DATE NOT NULL,
     `deletion_date` DATE,
-    `scanned_code` INT,
+    `scanned_code` INT ZEROFILL,
     `id_localization` INT,
     `id_invoice` INT,
     `id_year` INT NOT NULL,

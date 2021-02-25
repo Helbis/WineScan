@@ -5,7 +5,7 @@
 
 	    <!-- META -->
 	    <meta charset="UTF-8">
-	    <meta name="viewport" content="text/html; width=device-width, initial-scale=1.0">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	    <!-- FAVICON -->
 	    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/pngIcons/apple-touch-icon.png">
@@ -17,7 +17,12 @@
 		<link rel="stylesheet" href="./src/css/newElement/index.css">
 
 		<!-- SCRIPTS -->
-		<script defer src="./src/js/formAction.js" charset="utf-8"></script>
+		<!-- <script src="/socket.io/socket.io.js"></script> -->
+		<script src="./socket.io.js" charset="utf-8"></script>
+		<!-- <script src="/home/helbis/Documents/TCS/WineScan/node_modules/socket.io/client-dist/socket.io.min.js" charset="utf-8"></script> -->
+		<!-- <script src="https://cdn.socket.io/socket.io-3.0.5.min.js" charset="utf-8"></script> -->
+
+		<script defer src="./src/javascripts/formAction.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<nav>
@@ -27,7 +32,6 @@
 
 			<h1>Add new element</h1>
 	    </nav>
-
 
 		<form
 		id="bottle_form"
@@ -93,7 +97,7 @@
 				<fieldset>
 					<legend>Year</legend>
 					<label for="wine_year">Year of the wine</label>
-					<input type="number" min="1901" max="2155" id="wine_year" name="wine_year" placeholder="e.g. 1997">
+					<input type="number" min="1901" step="1" max="2155" id="wine_year" name="wine_year" placeholder="e.g. 1997">
 
 					<label for="wine_photo">Photo</label>
 					<input type="file" id="wine_photo" name="wine_photo">
@@ -115,7 +119,7 @@
 				<legend>Bottle</legend>
 
 				<label for="amount">Amount to create</label>
-				<input id="amount" type="number" name="amount" placeholder="0" min="0" step="1" max="1000">
+				<input id="amount" type="number" name="amount" placeholder="0" min="1" step="1" max="1000">
 
 				<label for="price">Price for a bottle</label>
 				<input id="price" type="number" name="price" placeholder="399.99" min="0" step="0.01" max="1000000">
@@ -145,7 +149,7 @@
 				<input type="text" id="friends" name="friends" placeholder="Name of a friend">
 
 				<label for="scanned_code">Code for this bottle</label>
-				<input type="number" id="scanned_code" name="scanned_code" placeholder="123456789">
+				<input type="number" id="scanned_code" min="0" step="1" max="4294967295" name="scanned_code" placeholder="123456789">
 
 				<label for="localization">Localization</label>
 				<input id="localization" type="text" name="localization" placeholder="e.g. Lodz" list="localization_list">

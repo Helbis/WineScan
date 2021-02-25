@@ -4,8 +4,10 @@ const http = require('http').Server(server);
 const io = require('socket.io')(http);
 const mysql = require('mysql');
 
+
 // Global data
 const port = 3000;
+
 
 // MySQL https://www.npmjs.com/package/mysql#introduction
 const sql_db = mysql.createConnection({
@@ -22,12 +24,18 @@ sql_db.connect(error => {
     }
 
     console.log('Connected to the MySQL server.');
+    sql_db.query('SHOW TABLES;', (error, results, fields) => {
+        if (error) console.error(error);
+
+        // console.table(results);
+    });
 });
 
 
 // express server
 server.use(express.static('./'));       // Use root directory
 server.use(express.static('./public')); // Use public directory
+server.use(express.static('/home/helbis/Documents/TCS/WineScan/node_modules/socket.io/client-dist')); // Dirty fix for socket.io
 
 server.get('/', (req, res, next) => {
     res.send('./index.html');
@@ -50,12 +58,12 @@ io.on('connection', (socket) => {
         sql_db.query(query, (error, results, fields) => {
             if (error) throw error;
 
-            console.table(results);
+            // console.table(results);
             socket.emit('back2front', results);
         });
     });
 
     socket.on('disconnect', () => {
-        console.log('🔴\tuser disconnected');
+        console.log('💔\tuser disconnected');
     });
 });
