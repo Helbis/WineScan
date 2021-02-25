@@ -2,6 +2,19 @@ function removeBottle(code) {
     alert(code);
 }
 
+function addOption(name, datalist) {
+    if (name === undefined) { return; }
+    if (datalist === undefined) { return; }
+
+    const elem = document.getElementById(datalist);
+    const opt = document.createElement("option");
+
+    opt.value = name;
+    opt.innerHTML = name;
+
+    elem.appendChild(opt);
+}
+
 function activateDetails(row) {
     const activeElems = document.querySelectorAll('.detailsView.inactive');
     const card = activeElems[0];

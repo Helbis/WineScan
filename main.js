@@ -17,7 +17,7 @@ function loadData() {
         return;
     } else {
         const query = `
-        SELECT
+        SELECT DISTINCT
             Wine.name AS "wine_name",
             Wine_year.bottling_year AS "wine_year",
             Wine_year.photo AS "Photo",
@@ -39,27 +39,52 @@ function loadData() {
             // console.table(data);
             // console.log(data);
 
+            let obj = {
+                wNames: [],
+                years: [],
+                count: []
+            };
+
             for (let row in data) {
                 if (data.hasOwnProperty(row)) {
-                    // console.log(data[row]);
-                    const elem = card.cloneNode(true);
+                    if (!obj.wNames.includes(data[row].wine_name)) {
+                        obj.wNames.push(data[row].wine_name);
+                        // console.log(data[row].wine_name);
+                        // console.log(obj.wNames);
 
-                    // Change Photo
-                    elem.children[0].setAttribute("src", data[row].Photo);
+                        obj.count.push(1);
+                        // console.log(obj.count);
 
-                    // Change middle info
-                    // Wine name
-                    elem.children[1].children[0].innerHTML = data[row].wine_name;
-                    // Wine Year
-                    elem.children[1].children[1].innerHTML = data[row].wine_year;
-                    // Wine Style
-                    elem.children[1].children[2].innerHTML = data[row].style;
+                        if (!obj.years.includes(data[row].wine_year)) {
+                            obj.years.push(data[row].wine_year);
+                            // console.log(data[row].wine_year);
+                            // console.log(obj.years);
 
-                    // Add different button action
-                    elem.children[2].children[0].setAttribute("onclick", `activateDetails(${row})`);
+                            // Add new card
+                            const elem = card.cloneNode(true);
 
-                    // Attach element to collectionsView
-                    here.appendChild(elem);
+                            // Change Photo
+                            elem.children[0].setAttribute("src", data[row].Photo);
+
+                            // Change middle info
+                            // Wine name
+                            elem.children[1].children[0].innerHTML = data[row].wine_name;
+                            // Wine Year
+                            elem.children[1].children[1].innerHTML = data[row].wine_year;
+                            // Wine Style
+                            elem.children[1].children[2].innerHTML = data[row].style;
+
+                            // Add different button action
+                            elem.children[2].children[0].setAttribute("onclick", `activateDetails(${row})`);
+
+                            // Attach element to collectionsView
+                            here.appendChild(elem);
+                        }
+
+                        console.log(obj);
+                    } else {
+                        obj.count[obj.count.length - 1] += 1;
+                    }
                 }
             }
         });
