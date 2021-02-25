@@ -6,6 +6,8 @@
 	    <!-- META -->
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="wine scan winescan">
+		<meta name="description" content="WineScan is my final thesis project aming at collection managment.">
 
 	    <!-- FAVICON -->
 	    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/pngIcons/apple-touch-icon.png">
@@ -17,17 +19,13 @@
 		<link rel="stylesheet" href="./src/css/newElement/index.css">
 
 		<!-- SCRIPTS -->
-		<!-- <script src="/socket.io/socket.io.js"></script> -->
-		<script src="./socket.io.js" charset="utf-8"></script>
-		<!-- <script src="/home/helbis/Documents/TCS/WineScan/node_modules/socket.io/client-dist/socket.io.min.js" charset="utf-8"></script> -->
-		<!-- <script src="https://cdn.socket.io/socket.io-3.0.5.min.js" charset="utf-8"></script> -->
-
+		<script defer src="./socket.io.min.js" charset="utf-8"></script>
 		<script defer src="./src/javascripts/formAction.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<nav>
 	        <a href="./index.html" target="_top" rel="prev">
-	            <img src="./src/assets/pngIcons/favicon-32x32.png" alt="Go back">
+	            <img src="./src/assets/pngIcons/favicon-32x32.png" width="32px" height="32px" alt="Go back">
 	        </a>
 
 			<h1>Add new element</h1>
@@ -104,10 +102,15 @@
 
 					<fieldset id="rating">
 						<legend>Rating</legend>
+						<label for="rating1"></label>
 						<input checked type="radio" id="rating1" name="rating" onchange="rate.value=this.value" value="1">
+						<label for="rating2"></label>
 						<input type="radio" id="rating2" name="rating" onchange="rate.value=this.value" value="2">
+						<label for="rating3"></label>
 						<input type="radio" id="rating3" name="rating" onchange="rate.value=this.value" value="3">
+						<label for="rating4"></label>
 						<input type="radio" id="rating4" name="rating" onchange="rate.value=this.value" value="4">
+						<label for="rating5"></label>
 						<input type="radio" id="rating5" name="rating" onchange="rate.value=this.value" value="5">
 
 						<output name="rate" for="rating">1</output>
