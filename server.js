@@ -63,6 +63,10 @@ io.on('connection', (socket) => {
         });
     });
 
+    socket.on('submition', (msg) => {
+        console.log(msg);
+    });
+
     socket.on('disconnect', () => {
         console.log('💔\tuser disconnected');
     });
