@@ -64,7 +64,31 @@ io.on('connection', (socket) => {
     });
 
     socket.on('submition', (msg) => {
-        console.log(msg);
+        console.table(msg);
+
+            // { // Data looks like:
+            //     amount: "500"
+            //     friends: ""
+            //     invoice_note: "Great wine for no reason . . ."
+            //     localization: "Ulanów"
+            //     order_number: "456789145"
+            //     order_price: "12.54"
+            //     price: "30000"
+            //     rating: "5"
+            //     scanned_code: "123456789"
+            //     style: "5"
+            //     supplier_email: "john.doe@xyz.net"
+            //     supplier_name: "John Smith"
+            //     supplier_note: "Well known and respected supplier"
+            //     supplier_phone: "434525686"
+            //     taste: "2"
+            //     variety: "Airen"
+            //     volumes_options: "5"
+            //     wine_description: "jfdklsdjlkajflkdjksa"
+            //     wine_name: "Second"
+            //     wine_photo: ""
+            //     wine_year: "1997"
+            // }
     });
 
     socket.on('disconnect', () => {

@@ -53,14 +53,22 @@ function submitForm() {
     const data = Object.fromEntries(new FormData(form).entries());
 
     console.log(data);
+    // console.log(data.volumes_options);
 
     // You can add only
     //  wine,
     //  wine + wine_year,
     //  wine + wine_year + bottle
 
-    console.log(data.volumes_options);
-    socket.emit('submition', '😄');
+    if (data.wine_name.length === 0) {
+        alert("Zero length of wine name!");
+        return;
+    } else {
+        console.log("Transmittion to server . . .");
+        console.log(data);
+        socket.emit('submition', data);
+    }
+
 
     // Check if wine name and wine year were given
     // Then the bottle definition will be checked

@@ -46,7 +46,7 @@
     font-size: 1rem;
 }
 .details-top > img{
-    width: 150px;
+    /* width: 150px; */
     height: 150px;
 }
 
@@ -58,9 +58,9 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    
+
     margin: auto 0;
-    
+
     max-width: 10rem;
     height: 100%;
 }
@@ -74,15 +74,15 @@
 }
 .deletionForm > input {
     padding: 0.5rem;
-    
+
     width: 8rem;
     height: 2rem;
     background: var(--color-accent);
-    
+
     color: whitesmoke;
     font-size: 1rem;
     font-weight: bold;
-    
+
     border-style: none;
     border-radius: var(--border-radius, 5px);
 }
@@ -129,13 +129,13 @@ hr.afterTop{
 }
 
 /* Main part of the view */
-.details-main,
+/* .details-main,
 .description,
 .invoices {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-}
+} */
 
 .details-main > hr{
     width: 60%;
@@ -174,23 +174,4 @@ hr.afterTop{
     font-size: 1rem;
 
     outline: var(--color-accent, red) solid 1px;
-}
-
-/* Folding button for extra text */
-.foldingBtn{
-    background: var(--color-main, red);
-    color: black;
-
-    font-family: sans-serif;
-    font-weight: bold;
-
-    border-radius: var(--border-radius, 5px);
-    border-style: none;
-
-    width: 9ch;
-    height: 4ch;
-}
-.foldingBtn:active,
-.foldingBtn:hover{
-    background: var(--color-accent, orange);
 }
