@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="./src/css/upButton.css">
 
     <!-- JavaScript -->
-    <script src="./src/javascripts/functions.js" charset="utf-8"></script>
-    <script src="/socket.io/socket.io.js"></script>
+    <script onerror="window.socketIO_failed = true" src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script onerror="alert('functions not loaded')" src="./src/javascripts/functions.js" charset="utf-8" defer></script>
     <script src="./main.js" type="text/javascript" charset="utf-8" defer></script>
 
     <base href=".">
@@ -34,7 +34,6 @@
 
 <body>
     <div id="app">
-
         <nav id="topBar">
             <form class="searchForm" action="./src.js/functions.js" method="post" accept-charset="utf-8">
                 <!-- <label for="searchBar"></label> -->
@@ -83,11 +82,6 @@
 
             <a rel="external" target="_blank" href="https://github.com/Helbis/WineScan">
                 <img src="./public/icons/github/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo">
-            </a>
-            <a rel="nofollow" href="mailto:filiphelbig97@gmail.com?subject=WineScan">
-                <p>
-                    @
-                </p>
             </a>
             <a rel="next" href="./newElement.html" alt="Add new element">
                 <p>

@@ -3,25 +3,16 @@ function loadData() {
     const card = temp_card.content.firstElementChild;
     const here = document.getElementsByClassName("collectionsView")[0];
 
-    // console.log(temp_card);
-    // console.log(card.children[2]);
-    // console.log(here);
-
-    let socket;
-
-    try{
-        socket = io() ?? undefined;
-    } catch (error) {
-        console.error(error);
-    }
-
-    if (socket === undefined) {
+    if (window.socketIO_failed) {
         // Empty template
         for (let i = 0; i < 20; i++) {
             here.appendChild(card.cloneNode(true));
         }
         return;
+
     } else {
+        const socket = io();
+
         const query = `
         SELECT DISTINCT
             Wine.name AS "wine_name",
@@ -98,3 +89,5 @@ function loadData() {
 };
 
 loadData();
+
+// localStorage.test = "Hello world!";
