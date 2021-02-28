@@ -7,9 +7,15 @@ function loadData() {
     // console.log(card.children[2]);
     // console.log(here);
 
-    const socket = io();
+    let socket;
 
-    if (!io) {
+    try{
+        socket = io() ?? undefined;
+    } catch (error) {
+        console.error(error);
+    }
+
+    if (socket === undefined) {
         // Empty template
         for (let i = 0; i < 20; i++) {
             here.appendChild(card.cloneNode(true));

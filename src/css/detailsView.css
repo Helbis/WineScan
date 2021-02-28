@@ -48,10 +48,13 @@
 .details-top > img{
     /* width: 150px; */
     height: 150px;
+    max-width: 20%;
 }
 
 .basicInfo{
     width: 50%;
+    
+    margin: auto 0;
 }
 
 .deletionForm {

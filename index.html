@@ -37,8 +37,48 @@
 
         <nav id="topBar">
             <form class="searchForm" action="./src.js/functions.js" method="post" accept-charset="utf-8">
-                <label for="searchBar"></label>
-                <input id="searchBar" type="text" placeholder="Search..." maxlength="47">
+                <!-- <label for="searchBar"></label> -->
+                <!-- <input id="searchBar" type="text" placeholder="Search..." maxlength="47"> -->
+
+                <div>
+                    <label for="style">Style</label>
+                    <select id="style" name="style">
+                        <option value="0" checked>~~Style~~</option>
+                        <option value="1">Red</option>
+                        <option value="2">White</option>
+                        <option value="3">Sparkling</option>
+                        <option value="4">Rosé</option>
+                        <option value="5">Orange</option>
+                        <optgroup label="Dessert">
+                            <option value="6">Dessert</option>
+                            <option value="7">Dessert/Fortified</option>
+                            <option value="8">Dessert/Ice</option>
+                            <option value="9">Dessert/Aromatized</option>
+                            <option value="10">Dessert/Fruit</option>
+                            <option value="11">Dessert/Noble rot</option>
+                            <option value="12">Dessert/Straw</option>
+                        </optgroup>
+                        <optgroup label="Other">
+                            <option value="13">Other</option>
+                            <option value="14">Other/Table</option>
+                            <option value="15">Other/Natural</option>
+                            <option value="16">Other/Biodynamic</option>
+                            <option value="17">Other/Organic</option>
+                            <option value="18">Other/Kosher</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="taste">Taste</label>
+                    <select id="taste" name="taste" id="taste">
+                        <option value="0" checked>~~Taste~~</option>
+                        <option value="1">Dry</option>
+                        <option value="2">Medium dry</option>
+                        <option value="3">Medium Sweet</option>
+                        <option value="4">Sweet</option>
+                    </select>
+                </div>
             </form>
 
             <a rel="external" target="_blank" href="https://github.com/Helbis/WineScan">
@@ -71,7 +111,7 @@
                         <button type="button" name="detailed_view" onclick="activateDetails()">
                             More
                         </button>
-                        <!-- <p class="num_of_bottles">842</p> -->
+                        <p class="num_of_bottles">842</p>
                     </div>
                 </div>
             </template>
@@ -85,9 +125,7 @@
                     <p class="wine_name">name</p>
                     <p class="wine_year">year</p>
                     <p class="wine_style">style</p>
-
-                    <!-- <p class="creationDate">dd-mm-yy</p> -->
-                    <!-- <p class="num_of_bottles">Bottles : 842</p> -->
+                    <p class="num_of_bottles">Bottles : 842</p>
                 </div>
 
                 <form class="deletionForm" method="post">
@@ -118,8 +156,7 @@
                     </h1>
 
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </section>
 
@@ -128,8 +165,8 @@
                         Invoices
                     </h1>
 
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p placeholder="Nothing is here">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </section>
             </main>
