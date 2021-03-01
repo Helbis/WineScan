@@ -1,5 +1,8 @@
 nav#topBar{
-    z-index: 0;
+    position: sticky;
+    background: var(--color-main);
+    
+    z-index: 3;
     margin: 0 auto auto;
 
     padding: 1rem;
@@ -10,7 +13,8 @@ nav#topBar{
     gap: 1rem;
 
     max-width: var(--max-width-of-app, 1000px);
-    height: 70px;
+    
+    transition: 0.2s top ease-in-out;
 }
 
 nav#topBar > form {
@@ -55,18 +59,6 @@ nav#topBar > form > div > select{
     color: rgba(250, 250, 250, 0.6);
 }
 
-/* nav#topBar > form > input{
-    padding: 0 1rem;
-
-    font-size: 1.25rem;
-
-    width: 100%;
-    height: 100%;
-
-    border: none;
-    border-radius: var(--border-radius, 5px);
-}
- */
 nav#topBar > * {
     height: 3rem;
 
@@ -84,26 +76,31 @@ nav#topBar > button {
     border: none;
 }
 
-nav#topBar > form ~ a{
-    margin: auto 1rem;
+nav#topBar > form ~ div{
+    margin: auto 1rem auto auto;
+    display: flex;
+    flex-direction: row;
+}
+nav#topBar > form ~ div > * {
+    text-decoration: none;  
 }
 
-nav#topBar > form + a{
+/* nav#topBar > form + div{
     margin-right: 1rem;
     margin-left: auto;
-}
+} */
 
-nav#topBar > a > * {
+nav#topBar > div > a > * {
     margin: 0;
     padding: 0;
-    height: inherit;
+    height: 100%;
 
     color: lightgrey;
     font-family: monospace;
     font-size: 2.5rem;
 }
 
-nav#topBar > a > *:hover,
-nav#topBar > a > *:active{
+nav#topBar > div > a > *:hover,
+nav#topBar > div > a > *:active{
     color: white;
 }

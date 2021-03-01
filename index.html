@@ -17,6 +17,7 @@
     <link rel="manifest" href="./src/assets/pngIcons/site.webmanifest">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/filter.css" media="screen and (max-width:1030px)">
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="./src/css/collectionsView.css">
     <link rel="stylesheet" href="./src/css/topBar.css">
@@ -36,11 +37,8 @@
     <div id="app">
         <nav id="topBar">
             <form class="searchForm" action="./src.js/functions.js" method="post" accept-charset="utf-8">
-                <!-- <label for="searchBar"></label> -->
-                <!-- <input id="searchBar" type="text" placeholder="Search..." maxlength="47"> -->
-
                 <div>
-                    <label for="style">Style</label>
+                    <label for="style"></label>
                     <select id="style" name="style">
                         <option value="0" checked>~~Style~~</option>
                         <option value="1">Red</option>
@@ -69,7 +67,7 @@
                 </div>
 
                 <div>
-                    <label for="taste">Taste</label>
+                    <label for="taste"></label>
                     <select id="taste" name="taste" id="taste">
                         <option value="0" checked>~~Taste~~</option>
                         <option value="1">Dry</option>
@@ -80,20 +78,27 @@
                 </div>
             </form>
 
-            <a rel="external" target="_blank" href="https://github.com/Helbis/WineScan">
-                <img src="./public/icons/github/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo">
-            </a>
-            <a rel="next" href="./newElement.html" alt="Add new element">
-                <p>
-                    +
-                </p>
-            </a>
+            <div class="filtering">
+                <button id="stored" type="button" name="button">Stored</button>
+                <button id="finished" type="button" name="button">Finished</button>
+            </div>
+
+            <div>
+                <a rel="external" target="_blank" href="https://github.com/Helbis/WineScan">
+                    <img src="./public/icons/github/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo">
+                </a>
+                <a rel="next" href="./newElement.html" alt="Add new element">
+                    <p>
+                        +
+                    </p>
+                </a>
+            </div>
         </nav>
 
         <div class="collectionsView">
             <template id="temp_card">
                 <div class="card">
-                    <img class="left_of_card" src="./public/images/blanc_big_474x774.jpg" alt="wine" loading="lazy">
+                    <img class="left_of_card" src="./public/images/blanc_big_474x774.jpg" alt="wine bottle">
 
                     <div class="middle_of_card">
                         <p class="wine_name">Name of the wine</p>

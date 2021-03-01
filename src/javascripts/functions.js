@@ -1,3 +1,30 @@
+/*== Event listeners ==*/
+const stored = document.getElementById("stored");
+let storedSwitch = false;
+document.getElementById("stored").addEventListener("click", () => {
+    if (storedSwitch) {
+        stored.style.color = "#f00";
+        storedSwitch = false;
+    } else {
+        stored.style.color = "#0f0";
+        storedSwitch = true;
+    }
+});
+
+const finished = document.getElementById("finished");
+let finishedSwitch = false;
+document.getElementById("finished").addEventListener("click", () => {
+    if (finishedSwitch) {
+        finished.style.color = "#f00";
+        finishedSwitch = false;
+    } else {
+        finished.style.color = "#0f0";
+        finishedSwitch = true;
+    }
+});
+
+/*==============================*/
+
 function removeBottle(code) {
     alert(code);
 }
@@ -107,9 +134,9 @@ let prevScrollpos = window.pageYOffset;
 window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-        document.getElementById("searchBar").style.top = "0";
+        document.getElementById("topBar").style.top = "0";
     } else {
-        document.getElementById("searchBar").style.top = "-100px";
+        document.getElementById("topBar").style.top = "-1000px";
     }
     prevScrollpos = currentScrollPos;
 
