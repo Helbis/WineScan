@@ -31,7 +31,6 @@ finished.addEventListener("click", () => {
 
 setState(stored, true);
 setState(finished, false);
-console.log(storedSwitch, finishedSwitch);
 
 /*==============================*/
 
