@@ -36,9 +36,11 @@ setState(finished, false);
 
 function setState(what, state) {
     if (state) {
-        what.style.color = "limegreen";
+        what.style.background = "var(--color-accent)";
+        what.style.color = "whitesmoke";
     } else {
-        what.style.color = "red";
+        what.style.background = "lightgrey";
+        what.style.color = "black";
     }
 }
 

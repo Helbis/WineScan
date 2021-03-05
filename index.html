@@ -84,13 +84,8 @@
             </div>
 
             <div>
-                <!-- <a rel="external" target="_blank" href="https://github.com/Helbis/WineScan">
-                    <img src="./public/icons/github/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo">
-                </a> -->
                 <a rel="next" href="./newElement.html" alt="Add new element">
-                    <p>
-                        +
-                    </p>
+                    +
                 </a>
             </div>
         </nav>
@@ -130,16 +125,27 @@
                 <form class="deletionForm" method="post">
                     <label for="scanned_code">Enter the code</label>
                     <input
-                    type="number"
-                    id="scanned_code"
-                    name="scanned_code"
-                    placeholder="123456789"
-                    list="scanned_code_list"
-                    step="1">
+                        type="number"
+                        id="scanned_code"
+                        name="scanned_code"
+                        placeholder="123456789"
+                        list="scanned_code_list"
+                        min="0"
+                        step="1"
+                        max="4294967295">
                     <datalist id="scanned_code_list">
                     </datalist>
 
-                    <button id="removeBtn" type="button" name="button">Remove</button>
+                    <div class="">
+                        <input
+                            type="number"
+                            name="howManyRemove"
+                            min="0"
+                            step="1"
+                            max="1000"
+                            placeholder="3">
+                        <button id="removeBtn" type="button" name="button">Remove</button>
+                    </div>
                 </form>
 
                 <button type="button" name="exit" onclick="closeDetails()" class="details-exit">
@@ -166,6 +172,7 @@
 
                     <p placeholder="Nothing is here">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </section>
             </main>
