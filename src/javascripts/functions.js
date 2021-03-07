@@ -3,10 +3,34 @@ const stored = document.getElementById("stored");
 const finished = document.getElementById("finished");
 let storedSwitch = true;
 let finishedSwitch = false;
+const tasteList = {
+    1: "Dry",
+    2: "Medium dry",
+    3: "Medium Sweet",
+    4: "Sweet"
+}
+const styleList = {
+    1: "Red",
+    2: "White",
+    3: "Sparkling",
+    4: "Rosé",
+    5: "Orange",
+    6: "Dessert",
+    7: "Dessert/Fortified",
+    8: "Dessert/Ice",
+    9: "Dessert/Aromatized",
+    10: "Dessert/Fruit",
+    11: "Dessert/Noble rot",
+    12: "Dessert/Straw",
+    13: "Other",
+    14: "Other/Table",
+    15: "Other/Natural",
+    16: "Other/Biodynamic",
+    17: "Other/Organic",
+    18: "Other/Kosher"
+}
 
 
-// TODO: Set styles
-// TODO: Probably remove github link
 stored.addEventListener("click", () => {
     if (storedSwitch) {
         return;
@@ -31,7 +55,6 @@ finished.addEventListener("click", () => {
 
 setState(stored, true);
 setState(finished, false);
-
 /*==============================*/
 
 function setState(what, state) {
@@ -44,6 +67,45 @@ function setState(what, state) {
     }
 }
 
+/*== FILTERING ==*/
+// I will filter only by setting appropiate elements to invisible
+function filterStyle(styleID) {
+    // console.log(styleID);
+    const collection = document.querySelectorAll("[class=card]");
+    console.log(collection);
+
+    for (let i=0; i < collection.length; i++) {
+        // console.log(collection[i]);
+        for (let stl in styleList) {
+            if (styleList.hasOwnProperty(stl)) {
+                console.log("works");
+                if (collection[i].wine_style == stl) {
+                    console.log(`${collection[i]} style : ${stl}`);
+                }
+            }
+        }
+        if (styleID === 0) {
+            // Disable filtering of style
+
+        } else {
+        }
+    }
+}
+
+function filterTaste(tasteID) {
+    // console.log(tasteID);
+    const TASTE_COUNT = 4;
+
+    if (tasteID === 0) {
+        // Disable filtering of taste
+
+    } else {
+        for (let i = 1; i <= TASTE_COUNT; i++) {
+
+        }
+    }
+}
+/*==============================*/
 
 function removeBottle(code) {
     alert(code);
@@ -87,7 +149,7 @@ function populateWithData() {
 
         socket.emit('front2back', query);
 
-        socket.on('back2front', (data) => {
+        socket.on('back2front', data => {
             // console.table(data);
             // console.log(data);
 

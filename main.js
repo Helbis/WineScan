@@ -32,9 +32,10 @@ function loadData() {
 
         socket.emit('front2back', query);
 
+        // console.log("Load");
         socket.on('back2front', (data) => {
             // console.table(data);
-            // console.log(data);
+            localStorage.clear();
 
             let obj = {
                 wNames: [],
@@ -42,46 +43,61 @@ function loadData() {
                 count: []
             };
 
-            for (let row in data) {
-                if (data.hasOwnProperty(row)) {
-                    if (!obj.wNames.includes(data[row].wine_name)) {
-                        obj.wNames.push(data[row].wine_name);
-                        // console.log(data[row].wine_name);
-                        // console.log(obj.wNames);
+            let elem;
 
-                        obj.count.push(1);
-                        // console.log(obj.count);
+            for (let row=0; row<data.length; row++) {
+                // Store data in localStorage
+                localStorage.setItem(row, JSON.stringify(data[row]));
 
-                        if (!obj.years.includes(data[row].wine_year)) {
-                            obj.years.push(data[row].wine_year);
-                            // console.log(data[row].wine_year);
-                            // console.log(obj.years);
+                // Check year
 
-                            // Add new card
-                            const elem = card.cloneNode(true);
+                // Check name
 
-                            // Change Photo
-                            elem.children[0].setAttribute("src", data[row].Photo);
+                // Filter
+                if (!obj.wNames.includes(data[row].wine_name)) {
+                    obj.wNames.push(data[row].wine_name);
+                    // console.log(data[row].wine_name);
+                    // console.log(obj.wNames);
 
-                            // Change middle info
-                            // Wine name
-                            elem.children[1].children[0].innerHTML = data[row].wine_name;
-                            // Wine Year
-                            elem.children[1].children[1].innerHTML = data[row].wine_year;
-                            // Wine Style
-                            elem.children[1].children[2].innerHTML = data[row].style;
+                    obj.count.push(1);
+                    // console.log(obj.count);
 
-                            // Add different button action
-                            elem.children[2].children[0].setAttribute("onclick", `activateDetails(${row})`);
+                    // Testing
+                    obj.years.push(data[row].wine_year);
+                    // console.log(data[row].wine_year);
+                    // console.log(obj.years);
 
-                            // Attach element to collectionsView
-                            here.appendChild(elem);
-                        }
+                    // Add new card
+                    elem = card.cloneNode(true);
 
-                        console.log(obj);
-                    } else {
-                        obj.count[obj.count.length - 1] += 1;
-                    }
+                    // Change Photo
+                    elem.children[0].setAttribute("src", data[row].Photo);
+
+                    // Change middle info
+                    // Wine name
+                    elem.children[1].children[0].innerHTML = data[row].wine_name;
+                    elem.setAttribute("wine_name", data[row].wine_name);
+                    // Wine Year
+                    elem.children[1].children[1].innerHTML = data[row].wine_year;
+                    elem.setAttribute("wine_year", data[row].wine_year);
+                    // Wine Style
+                    elem.children[1].children[2].innerHTML = data[row].style;
+                    elem.setAttribute("wine_style", data[row].style);
+
+                    // Add different button action
+                    elem.children[2].children[0].setAttribute("onclick", `activateDetails(${row})`);
+
+                    // Attach element to collectionsView
+                    here.appendChild(elem);
+                    // Testing
+
+                    // if (!obj.years.includes(data[row].wine_year)) {
+                    //
+                    // }
+
+                    // console.log(obj);
+                } else {
+                    obj.count[obj.count.length - 1] += 1;
                 }
             }
         });
@@ -90,4 +106,4 @@ function loadData() {
 
 loadData();
 
-// localStorage.test = "Hello world!";
+// console.log(localStorage);

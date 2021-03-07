@@ -26,9 +26,20 @@
     <link rel="stylesheet" href="./src/css/upButton.css">
 
     <!-- JavaScript -->
-    <script onerror="window.socketIO_failed = true" src="/socket.io/socket.io.js" charset="utf-8"></script>
-    <script onerror="alert('functions not loaded')" src="./src/javascripts/functions.js" charset="utf-8" defer></script>
-    <script src="./main.js" type="text/javascript" charset="utf-8" defer></script>
+    <script onerror="window.socketIO_failed = true"
+        src="/socket.io/socket.io.js"
+        type="text/javascript"
+        charset="utf-8"></script>
+    <script onerror="alert('functions not loaded')"
+        src="./src/javascripts/functions.js"
+        type="text/javascript"
+        charset="utf-8"
+        defer></script>
+    <script onerror="alert('main not loaded')"
+        src="./main.js"
+        type="text/javascript"
+        charset="utf-8"
+        defer></script>
 
     <base href=".">
 </head>
@@ -39,7 +50,7 @@
             <form class="searchForm" action="./src.js/functions.js" method="post" accept-charset="utf-8">
                 <div>
                     <label for="style"></label>
-                    <select id="style" name="style">
+                    <select id="style" name="style" onchange="filterStyle(this.value)">
                         <option value="0" checked>~~Style~~</option>
                         <option value="1">Red</option>
                         <option value="2">White</option>
@@ -68,7 +79,7 @@
 
                 <div>
                     <label for="taste"></label>
-                    <select id="taste" name="taste" id="taste">
+                    <select id="taste" name="taste" id="taste" onchange="filterTaste(this.value)">
                         <option value="0" checked>~~Taste~~</option>
                         <option value="1">Dry</option>
                         <option value="2">Medium dry</option>
@@ -136,7 +147,7 @@
                     <datalist id="scanned_code_list">
                     </datalist>
 
-                    <div class="">
+                    <div>
                         <input
                             type="number"
                             name="howManyRemove"
