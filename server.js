@@ -58,7 +58,7 @@ io.on('connection', (socket) => {
         sql_db.query(query, (error, results, fields) => {
             if (error) throw error;
 
-            console.table(results);
+            // console.table(results);
             socket.emit('back2front', results);
         });
     });

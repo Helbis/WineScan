@@ -16,10 +16,13 @@ function loadData() {
         const query = `
         SELECT DISTINCT
             Wine.name AS "wine_name",
+            Taste.name AS "wine_taste",
             Wine_year.bottling_year AS "wine_year",
             Wine_year.photo AS "Photo",
             Style.name AS "style",
             Bottle.scanned_code AS "scanned_code",
+            Bottle.creation_date AS "creation_date",
+            Bottle.deletion_date AS "deletion_date",
             Wine.description AS "Description",
             Invoice.note AS "Invoice"
         FROM
@@ -27,14 +30,14 @@ function loadData() {
             Bottle ON Bottle.id_invoice = Invoice.id INNER JOIN
             Wine_year ON Bottle.id_year = Wine_year.id INNER JOIN
             Wine ON Wine_year.id_wine = Wine.id INNER JOIN
+            Taste ON Wine.id_taste = Taste.id INNER JOIN
             Style ON Wine.id_style = Style.id
         ORDER BY Wine_year.bottling_year;`;
 
         socket.emit('front2back', query);
 
-        // console.log("Load");
         socket.on('back2front', (data) => {
-            // console.table(data);
+            console.table(data);
             localStorage.clear();
 
             let obj = {
@@ -56,16 +59,11 @@ function loadData() {
                 // Filter
                 if (!obj.wNames.includes(data[row].wine_name)) {
                     obj.wNames.push(data[row].wine_name);
-                    // console.log(data[row].wine_name);
-                    // console.log(obj.wNames);
 
                     obj.count.push(1);
-                    // console.log(obj.count);
 
                     // Testing
                     obj.years.push(data[row].wine_year);
-                    // console.log(data[row].wine_year);
-                    // console.log(obj.years);
 
                     // Add new card
                     elem = card.cloneNode(true);
@@ -84,18 +82,21 @@ function loadData() {
                     elem.children[1].children[2].innerHTML = data[row].style;
                     elem.setAttribute("wine_style", data[row].style);
 
+                    elem.setAttribute("wine_taste", data[row].wine_taste);
+                    elem.setAttribute("creation_date", data[row].creation_date);
+                    elem.setAttribute("deletion_date", data[row].deletion_date);
+
                     // Add different button action
                     elem.children[2].children[0].setAttribute("onclick", `activateDetails(${row})`);
 
                     // Attach element to collectionsView
                     here.appendChild(elem);
-                    // Testing
 
-                    // if (!obj.years.includes(data[row].wine_year)) {
-                    //
-                    // }
+                    // Filter finished ones
+                    if (elem.getAttribute("deletion_date") !== "null") {
+                        elem.style.display = "none";
+                    }
 
-                    // console.log(obj);
                 } else {
                     obj.count[obj.count.length - 1] += 1;
                 }
@@ -105,5 +106,3 @@ function loadData() {
 };
 
 loadData();
-
-// console.log(localStorage);

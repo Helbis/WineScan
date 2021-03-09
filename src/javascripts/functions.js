@@ -1,6 +1,7 @@
 /*== Event listeners ==*/
 const stored = document.getElementById("stored");
 const finished = document.getElementById("finished");
+
 let storedSwitch = true;
 let finishedSwitch = false;
 const tasteList = {
@@ -32,6 +33,8 @@ const styleList = {
 
 
 stored.addEventListener("click", () => {
+    const collection = document.querySelectorAll("[class=card]");
+
     if (storedSwitch) {
         return;
     } else {
@@ -39,6 +42,12 @@ stored.addEventListener("click", () => {
         setState(finished, false);
         storedSwitch = true;
         finishedSwitch = false;
+
+        // Reset other setting
+        document.getElementById("taste").value = 0;
+        document.getElementById("style").value = 0;
+
+        filterStored();
     }
 });
 
@@ -50,6 +59,12 @@ finished.addEventListener("click", () => {
         setState(stored, false);
         storedSwitch = false;
         finishedSwitch = true;
+
+        // Reset other setting
+        document.getElementById("taste").value = 0;
+        document.getElementById("style").value = 0;
+
+        filterFinished();
     }
 });
 
@@ -67,41 +82,90 @@ function setState(what, state) {
     }
 }
 
+function filterStored() {
+    const collection = document.querySelectorAll("[class=card]");
+
+    // Check for date
+    for (let i=0; i < collection.length; i++) {
+        if (collection[i].getAttribute("deletion_date") === "null") {
+            collection[i].style.display = "flex";
+        } else {
+            collection[i].style.display = "none";
+        }
+    }
+}
+
+function filterFinished() {
+    const collection = document.querySelectorAll("[class=card]");
+
+    // Check for date
+    for (let i=0; i < collection.length; i++) {
+        if (collection[i].getAttribute("deletion_date") !== "null") {
+            collection[i].style.display = "flex";
+        } else {
+            collection[i].style.display = "none";
+        }
+    }
+}
+
 /*== FILTERING ==*/
 // I will filter only by setting appropiate elements to invisible
 function filterStyle(styleID) {
-    // console.log(styleID);
     const collection = document.querySelectorAll("[class=card]");
-    console.log(collection);
+
+    // Reset other setting
+    document.getElementById("taste").value = 0;
+
+    if (storedSwitch) {
+        filterStored();
+    } else {
+        filterFinished();
+    }
 
     for (let i=0; i < collection.length; i++) {
-        // console.log(collection[i]);
-        for (let stl in styleList) {
-            if (styleList.hasOwnProperty(stl)) {
-                console.log("works");
-                if (collection[i].wine_style == stl) {
-                    console.log(`${collection[i]} style : ${stl}`);
-                }
-            }
+        if (parseInt(styleID) === 0) {
+            collection[i].style.display = "flex";
+            continue;
         }
-        if (styleID === 0) {
-            // Disable filtering of style
 
+        if (collection[i].style.display === "none") {
+            continue;
+        }
+
+        if (collection[i].getAttribute("wine_style") === (styleList[styleID])) {
+            collection[i].style.display = "flex";
         } else {
+            collection[i].style.display = "none";
         }
     }
 }
 
 function filterTaste(tasteID) {
-    // console.log(tasteID);
-    const TASTE_COUNT = 4;
+    const collection = document.querySelectorAll("[class=card]");
 
-    if (tasteID === 0) {
-        // Disable filtering of taste
+    // Reset other setting
+    document.getElementById("style").value = 0;
 
+    if (storedSwitch) {
+        filterStored();
     } else {
-        for (let i = 1; i <= TASTE_COUNT; i++) {
+        filterFinished();
+    }
 
+    for (let i=0; i < collection.length; i++) {
+        if (parseInt(tasteID) === 0) {
+            collection[i].style.display = "flex";
+            continue;
+        }
+
+        if (collection[i].style.display === "none") {
+            continue;
+        }
+
+        if (collection[i].getAttribute("wine_taste") === (tasteList[tasteID])) {
+            collection[i].style.display = "none";
+        } else {
+            collection[i].style.display = "flex";
         }
     }
 }
@@ -150,7 +214,7 @@ function populateWithData() {
         socket.emit('front2back', query);
 
         socket.on('back2front', data => {
-            // console.table(data);
+            console.table(data);
             // console.log(data);
 
             if (data.hasOwnProperty(row)) {
