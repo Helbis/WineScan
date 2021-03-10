@@ -100,21 +100,8 @@
 					<label for="wine_photo">Photo</label>
 					<input type="text" id="wine_photo" name="wine_photo" placeholder="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.pL043fATKgTuvn50ZveS6QHaDV%26pid%3DApi&f=1">
 
-					<fieldset id="rating">
-						<legend>Rating</legend>
-						<label for="rating1"></label>
-						<input checked type="radio" id="rating1" name="rating" onchange="rate.value=this.value" value="1">
-						<label for="rating2"></label>
-						<input type="radio" id="rating2" name="rating" onchange="rate.value=this.value" value="2">
-						<label for="rating3"></label>
-						<input type="radio" id="rating3" name="rating" onchange="rate.value=this.value" value="3">
-						<label for="rating4"></label>
-						<input type="radio" id="rating4" name="rating" onchange="rate.value=this.value" value="4">
-						<label for="rating5"></label>
-						<input type="radio" id="rating5" name="rating" onchange="rate.value=this.value" value="5">
-
-						<output name="rate" for="rating">1</output>
-					</fieldset>
+					<label for="rating">Rating</label>
+					<input type="number" id="rating" name="rating" placeholder="2" min="0" step="1" max="100">
 				</fieldset>
 			</fieldset>
 

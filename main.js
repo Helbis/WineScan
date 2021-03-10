@@ -52,17 +52,19 @@ function loadData() {
                 // Store data in localStorage
                 localStorage.setItem(row, JSON.stringify(data[row]));
 
-                // Check year
-
-                // Check name
+                JSON.parse(localStorage[3])["wine_name"]
 
                 // Filter
                 if (!obj.wNames.includes(data[row].wine_name)) {
+                    // If the name is not in the list of seen names
+                    //      add everything
+
+                    // Add new name
                     obj.wNames.push(data[row].wine_name);
 
                     obj.count.push(1);
 
-                    // Testing
+                    // Add new year to the list
                     obj.years.push(data[row].wine_year);
 
                     // Add new card
@@ -89,15 +91,14 @@ function loadData() {
                     // Add different button action
                     elem.children[2].children[0].setAttribute("onclick", `activateDetails(${row})`);
 
-                    // Attach element to collectionsView
-                    here.appendChild(elem);
-
                     // Filter finished ones
                     if (elem.getAttribute("deletion_date") !== "null") {
                         elem.style.display = "none";
                     }
-
+                    // Attach element to collectionsView
+                    here.appendChild(elem);
                 } else {
+                    // Name already exists, check for the same year
                     obj.count[obj.count.length - 1] += 1;
                 }
             }
