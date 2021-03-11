@@ -52,8 +52,6 @@ function loadData() {
                 // Store data in localStorage
                 localStorage.setItem(row, JSON.stringify(data[row]));
 
-                JSON.parse(localStorage[3])["wine_name"]
-
                 // Filter
                 if (!obj.wNames.includes(data[row].wine_name)) {
                     // If the name is not in the list of seen names
