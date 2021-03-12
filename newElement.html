@@ -19,8 +19,13 @@
 		<link rel="stylesheet" href="./src/css/newElement/index.css">
 
 		<!-- SCRIPTS -->
-		<script defer src="./socket.io.min.js" charset="utf-8"></script>
-		<script defer src="./src/javascripts/formAction.js" charset="utf-8"></script>
+		<script defer
+			src="./socket.io.min.js"
+			charset="utf-8"
+			onerror="window.socketIO_failed = true"></script>
+		<script defer
+			src="./src/javascripts/formAction.js"
+			charset="utf-8"></script>
 	</head>
 	<body>
 		<nav>
