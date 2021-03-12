@@ -188,69 +188,45 @@ function addOption(name, datalist) {
     elem.appendChild(opt);
 }
 
-function populateWithData() {
+function populateWithData(row) {
+    const det = document.querySelectorAll('.detailsView')[0];
+
     if (window.socketIO_failed) {
         return;
     } else {
-        const query = `
-            SELECT
-                Wine.name AS "wine_name",
-                Wine_year.bottling_year AS "wine_year",
-                Wine_year.photo AS "Photo",
-                Style.name AS "style",
-                Bottle.scanned_code AS "scanned_code",
-                Wine.description AS "Description",
-                Invoice.note AS "Invoice"
-            FROM
-                Invoice INNER JOIN
-                Bottle ON Bottle.id_invoice = Invoice.id INNER JOIN
-                Wine_year ON Bottle.id_year = Wine_year.id INNER JOIN
-                Wine ON Wine_year.id_wine = Wine.id INNER JOIN
-                Style ON Wine.id_style = Style.id
-            ORDER BY Wine_year.bottling_year;`;
+        if (localStorage.hasOwnProperty(row)) {
+            const data = JSON.parse(localStorage[row]);
 
-        const socket = io();
+            // Change Photo
+            det.children[0].children[0].setAttribute("src", data.Photo);
 
-        socket.emit('front2back', query);
+            // Change middle info
+            // Wine name
+            det.children[0].children[1].children[0].innerHTML = data.wine_name;
+            // Wine Year
+            det.children[0].children[1].children[1].innerHTML = data.wine_year;
+            // Wine Style
+            det.children[0].children[1].children[2].innerHTML = data.style;
+            // Removing form
+            det.children[0].children[2].children[3].setAttribute("onclick", `removeBottle(${data.scanned_code})`);
 
-        socket.on('back2front', data => {
-            console.table(data);
-            // console.log(data);
+            // Change description
+            det.children[2].children[0].children[1].innerHTML = data.Description;
 
-            if (data.hasOwnProperty(row)) {
-                // console.log(data[row]);
-                const elem = card.cloneNode(true);
-
-                // Change Photo
-                card.children[0].children[0].setAttribute("src", data[row].Photo);
-
-                // Change middle info
-                // Wine name
-                card.children[0].children[1].children[0].innerHTML = data[row].wine_name;
-                // Wine Year
-                card.children[0].children[1].children[1].innerHTML = data[row].wine_year;
-                // Wine Style
-                card.children[0].children[1].children[2].innerHTML = data[row].style;
-                // Removing form
-                card.children[0].children[2].children[3].setAttribute("onclick", `removeBottle(${data[row].scanned_code})`);
-
-                // Change description
-                card.children[2].children[0].children[1].innerHTML = data[row].Description;
-
-                // Change invoice
-                card.children[2].children[1].children[1].innerHTML = data[row].Invoice;
-            }
-        });
+            // Change invoice
+            det.children[2].children[1].children[1].innerHTML = data.Invoice;
+        }
     }
 }
 
 function activateDetails(row) {
     const card = document.querySelectorAll('.detailsView.inactive')[0];
+    console.log(row);
 
     card.classList.remove('inactive');
     card.classList.add('active');
 
-    populateWithData();
+    populateWithData(row);
 }
 
 function closeDetails() {
