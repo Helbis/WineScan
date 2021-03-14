@@ -44,9 +44,6 @@ http.listen(port, () => {
 });
 
 
-// const submition = async (qr) => {
-//     temp = await sql_db.query(qr);
-// }
 // Socket IO
 io.on('connection', (socket) => {
     console.log('💚\tuser connected');
@@ -57,13 +54,12 @@ io.on('connection', (socket) => {
         sql_db.query(query, (error, results, fields) => {
             if (error) console.error(error);
 
-            // console.table(results);
             socket.emit('back2front', results);
         });
     });
 
     socket.on('submition', (data) => {
-        console.log("\n\nData submition\n");
+        console.log("\n\n~~~~~~~~~Data submition~~~~~~~~~\n");
 
         /* data looks like
         {
@@ -135,6 +131,8 @@ io.on('connection', (socket) => {
                 if (data.taste.length === 0) {
                     console.warn("\ttaste not provided");
                 } else {
+                    data.taste = parseInt(data.taste);
+
                     for (let i = 0; i < tastes.length; i++) {
                         if (tastes[i].id === parseInt(data.taste)) {
                             taste_id = tastes[i].id;
@@ -156,8 +154,10 @@ io.on('connection', (socket) => {
                     console.warn("\tstyle not provided");
                     return;
                 } else {
+                    data.style = parseInt(data.style);
+
                     for (let i = 0; i < styles.length; i++) {
-                        if (styles[i].id === parseInt(data.style)) {
+                        if (styles[i].id === data.style) {
                             style_id = styles[i].id;
                             break;
                         }
@@ -174,40 +174,54 @@ io.on('connection', (socket) => {
             // Check wine year data
             if (data.wine_year.length !== 0) {
                 console.log("Wine year:");
+                data.wine_year = parseInt(data.wine_year);
+
+                for (let i = 0; i < wine_years.length; i++) {
+                    if (wine_years[i].bottling_year === data.wine_year) {
+                        wine_year_id = wine_years[i].id;
+                        break;
+                    }
+                }
 
                 if (data.wine_photo.length === 0) {
                     console.warn("\twine_photo not provided");
                 }
                 if (data.rating.length === 0) {
+                    data.rating = 0;
                     console.warn("\trating not provided");
                 } else {
                     data.rating = parseInt(data.rating);
                 }
+
+                console.log("\t✅ OK");
             } else {
+                data.wine_year = 1901;
                 console.warn("❌ Wine year not provided");
             }
 
             // Check bottle data
-            if (data.volumes_options.length === 0) {
+            if (data.scanned_code.length !== 0) {
+                data.scanned_code = parseInt(data.scanned_code);
                 console.log("Bottle:");
 
+                for (let i = 0; i < bottles.length; i++) {
+                    bottles[i].scanned_code = parseInt(bottles[i].scanned_code);
+                    if (bottles[i].scanned_code === data.scanned_code) {
+                        bottle_id = bottles[i].id;
+                        break;
+                    }
+                }
+
                 if (data.price.length !== 0) {
-                    console.warn("\tprice not provided");
                     data.price = parseFloat(data.price);
 
                     if (data.amount.length !== 0) {
                         data.amount = parseInt(data.amount);
                     } else {
-                        data.amount = 0;
+                        data.amount = 1;
                     }
                     if (data.friends.length === 0) {
                         console.warn("\tfriends not provided");
-                    }
-                    if (data.scanned_code.length !== 0) {
-                        data.scanned_code = parseInt(data.scanned_code);
-                    } else {
-                        console.warn("\tscanned code not provided");
-                        data.scanned_code = 0;
                     }
                     if (data.localization.length !== 0) {
                         for (let i = 0; i < localizations.length; i++) {
@@ -219,12 +233,26 @@ io.on('connection', (socket) => {
                     } else {
                         console.warn("❌ Localization not provided");
                     }
+                    if (data.volumes_options.length !== 0) {
+
+                        data.volumes_options = parseInt(data.volumes_options);
+
+                        for (let i = 0; i < volumes.length; i++) {
+                            if (volumes[i].id === data.volumes_options) {
+                                volumes_id = volumes[i].id;
+                                break;
+                            }
+                        }
+                    } else {
+                        console.warn("❌ volume not provided");
+                    }
                 } else {
-                    console.warn("❌ Bottle price not provided");
+                    console.warn("\tprice not provided");
                     data.price = 0;
                 }
             } else {
-                console.warn("❌ Bottle volume not provided");
+                console.warn("❌ Bottle scanned code not provided");
+                data.scanned_code = 0;
             }
 
             // Check invoice data
@@ -239,13 +267,15 @@ io.on('connection', (socket) => {
 
                 if (data.order_price.length === 0) {
                     console.log("\ttotal price not provided");
-                    data.scanned_code = 0;
+                    data.order_price = 0;
                 } else {
-                    data.scanned_code = parseInt(data.scanned_code);
+                    data.order_price = parseInt(data.order_price);
                 }
                 if (data.invoice_note.length === 0) {
                     console.log("\tnote not provided");
                 }
+
+                console.log("\t✅ OK");
             } else {
                 console.warn("❌ Invoice order number not provided");
             }
@@ -269,24 +299,29 @@ io.on('connection', (socket) => {
                 if (data.supplier_note.length === 0) {
                     console.log("\tsupplier_note not provided");
                 }
+
+                console.log("\t✅ OK");
             } else {
                 console.warn("❌ Supplier name not provided");
             }
         }
 
+
         let b = Promise.resolve(mainSub());
         b.then(() => {
+            console.log("\n\nData:");
+            console.table(data);
             console.log("\n*******************************");
-            console.log("wine_id:\t\t", wine_id);
-            console.log("wine_year_id:\t\t", wine_year_id);
-            console.log("bottle_id:\t\t", bottle_id);
-            console.log("localization_id:\t", localization_id);
-            console.log("invoice_id:\t\t", invoice_id);
-            console.log("supplier_id:\t\t", supplier_id);
-            console.log("taste_id:\t\t", taste_id);
-            console.log("style_id:\t\t", style_id);
-            console.log("volumes_id:\t\t", volumes_id);
-            console.log("variety_id:\t\t", variety_id);
+            console.log("wine_id:\t\t",         wine_id);
+            console.log("wine_year_id:\t\t",    wine_year_id);
+            console.log("bottle_id:\t\t",       bottle_id);
+            console.log("localization_id:\t",   localization_id);
+            console.log("invoice_id:\t\t",      invoice_id);
+            console.log("supplier_id:\t\t",     supplier_id);
+            console.log("taste_id:\t\t",        taste_id);
+            console.log("style_id:\t\t",        style_id);
+            console.log("volumes_id:\t\t",      volumes_id);
+            console.log("variety_id:\t\t",      variety_id);
             console.log("*******************************\n");
         });
 
@@ -295,7 +330,7 @@ io.on('connection', (socket) => {
         // Get ids of specific elements that are constant for the database
         /*
         INSERT INTO Wine(name, description, id_taste, id_variety, id_style)
-            VALUES("Kistler Chardonnay Russian River Valley Vine Hill Vineyard 2017", "Complex, with crunchy acidity to the concentrated citrus and McIntosh apple flavors. Intense minerality shows midpalate, followed by a pure and powerful finish that lingers with dried savory herb and toasty hints. Best from 2022 through 2027. 1,979 cases made. —KM", 2, 757, 6);
+            VALUES("Kistler Chardonnay Russian River Valley Vine Hill Vineyard 2017", "Complex, with crunchy acidity to the concentrated citrus", 2, 757, 6);
 
         INSERT INTO Wine_year(bottling_year, rating, photo, id_wine)
             VALUES("2010", 96, "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Sk1Ua367nGL71JyU9M7JoAAAAA%26pid%3DApi&f=1", 1);
